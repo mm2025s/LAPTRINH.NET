@@ -1,0 +1,124 @@
+================================================================================
+BÁO CÁO THỰC HÀNH LAB 01 - LẬP TRÌNH .NET (IT3212)
+HỌC PHẦN: LẬP TRÌNH .NET | BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+KHOA CÔNG NGHỆ THÔNG TIN - ĐẠI HỌC CÔNG NGHỆ ĐÔNG Á
+================================================================================
+
+I. CẤU TRÚC THƯ MỤC NGUỒN (Lap1)
+--------------------------------------------------------------------------------
+Lap1/
+├── Lab01_Console.csproj           # Cấu hình dự án .NET 8.0 Console
+├── Lab01_Console.cs               # Menu chính điều hướng chọn chạy từng bài
+├── Bai01_ThongTinCaNhan.cs         # Bài 1: Nhập thông tin cá nhân & tính tuổi
+├── Bai02_TinhHinhTru.cs           # Bài 2: Tính diện tích Sxq và thể tích hình trụ
+├── Bai03_XepLoaiHocTap.cs         # Bài 3: Xếp loại học tập theo điểm (0..10)
+├── Bai04_MenuTongVaBangCuuChuong.cs # Bài 4: Menu tính tổng 1..n & cửu chương 7
+├── Bai05_XuLyNgoaiLePhapChia.cs    # Bài 5: Xử lý ngoại lệ Format & DivideByZero
+├── Bai06_GiaiPhuongTrinhBacHai.cs  # Bài 6: Giải phương trình ax^2 + bx + c = 0
+├── Bai07_ThongKeDaySo.cs          # Bài 7: Thống kê mảng (tổng, TB, max, min, chẵn)
+├── Bai08_KiemTraSoNguyenTo.cs      # Bài 8: Liệt kê số nguyên tố không vượt quá n
+├── Bai09_DocSo0Den99.cs           # Bài 9: Đọc số 0..99 bằng tiếng Việt (switch)
+├── Bai10_VeHinhKyTu.cs            # Bài 10: Vẽ tam giác đặc, tam giác rỗng, vuông rỗng
+├── README.txt                     # Hướng dẫn build, chạy & dữ liệu thử nghiệm
+└── BAP_CAO_KET_QUA.txt            # Tệp báo cáo chi tiết kết quả chạy từng bài
+
+II. KẾT QUẢ CHẠY VÀ DỮ LIỆU KIỂM THỬ TỪNG BÀI
+--------------------------------------------------------------------------------
+
+1. BÀI 1: NHẬP THÔNG TIN CÁ NHÂN VÀ TÍNH TUỔI
+- Yêu cầu: Nhập họ tên, năm sinh; tính tuổi gần đúng = năm hiện tại - năm sinh.
+- Dữ liệu vào:
+    Họ và tên: Nguyễn Văn An
+    Năm sinh: 2003
+- Kết quả hiển thị:
+    Xin chào Nguyễn Văn An, tuổi gần đúng: 23
+
+2. BÀI 2: TÍNH TOÁN HÌNH TRỤ
+- Yêu cầu: Nhập r, h > 0; tính Sxq = 2*pi*r*h và V = pi*r^2*h.
+- Dữ liệu vào:
+    Bán kính r = 3.5
+    Chiều cao h = 10
+- Kết quả hiển thị:
+    Sxq = 219.91; V = 384.85
+
+3. BÀI 3: XẾP LOẠI KẾT QUẢ HỌC TẬP
+- Yêu cầu: Nhập điểm [0..10], xếp loại: Xuất sắc (>=9), Giỏi (>=8), Khá (>=6.5), Trung bình (>=5), Yếu (<5).
+- Dữ liệu vào:
+    Nhập điểm: 8.5
+- Kết quả hiển thị:
+    Giỏi
+- Test case lỗi (< 0 hoặc > 10):
+    Nhập điểm: 11 -> "Điểm phải thuộc [0, 10]."
+
+4. BÀI 4: MENU XỬ LÝ (TỔNG 1..N & BẢNG CỬU CHƯƠNG)
+- Chức năng 1 (Tổng 1..n):
+    n = 5 -> Tổng = 15 (1+2+3+4+5)
+- Chức năng 2 (Bảng cửu chương 7):
+    7 x 1 = 7
+    7 x 2 = 14
+    7 x 3 = 21
+    ...
+    7 x 10 = 70
+
+5. BÀI 5: XỬ LÝ NGOẠI LỆ PHÉP CHIA
+- Test case 1 (Bình thường):
+    a = 10, b = 2 -> a / b = 5. Kết thúc phép tính.
+- Test case 2 (Chia cho 0 - DivideByZeroException):
+    a = 10, b = 0 -> "Không thể chia cho 0." Kết thúc phép tính.
+- Test case 3 (Sai định dạng - FormatException):
+    a = abc -> "Dữ liệu phải là số nguyên." Kết thúc phép tính.
+
+6. BÀI 6: GIẢI PHƯƠNG TRÌNH BẬC HAI (ax^2 + bx + c = 0)
+- Test case 1 (a = 1, b = -3, c = 2):
+    delta = 9 - 8 = 1 > 0
+    x1 = 2.00; x2 = 1.00
+- Test case 2 (a = 1, b = -2, c = 1):
+    delta = 0 -> Nghiệm kép x1 = x2 = 1.00
+- Test case 3 (a = 1, b = 1, c = 5):
+    delta < 0 -> Phương trình vô nghiệm.
+- Test case 4 (a = 0, b = 2, c = -4):
+    Nghiệm bậc nhất x = 2.00
+
+7. BÀI 7: THỐNG KÊ DÃY SỐ NGUYÊN
+- Dữ liệu vào:
+    n = 5
+    Dãy số: 2, 5, 8, 1, 4
+- Kết quả hiển thị:
+    Tổng = 20; TB = 4.00; Max = 8; Min = 1; Số chẵn = 3
+
+8. BÀI 8: KIỂM TRA & LIỆT KÊ SỐ NGUYÊN TỐ <= n
+- Dữ liệu vào:
+    n = 20
+- Kết quả hiển thị:
+    Các số nguyên tố <= 20: 2 3 5 7 11 13 17 19
+
+9. BÀI 9: ĐỌC SỐ TỪ 0 ĐẾN 99 BẰNG TIẾNG VIỆT
+- Test case 1:
+    Nhập số: 5 -> đọc là: "năm"
+- Test case 2:
+    Nhập số: 15 -> đọc là: "mười lăm"
+- Test case 3:
+    Nhập số: 21 -> đọc là: "hai mươi mốt"
+- Test case 4:
+    Nhập số: 54 -> đọc là: "năm mươi tư"
+- Test case 5:
+    Nhập số: 90 -> đọc là: "chín mươi"
+
+10. BÀI 10: VẼ HÌNH BẰNG KÝ TỰ *
+- Menu:
+    1. Tam giác vuông đặc (h = 3):
+       * 
+       * * 
+       * * * 
+    2. Tam giác vuông rỗng (h = 4):
+       * 
+       * * 
+       *   * 
+       * * * * 
+    3. Hình vuông rỗng (a = 4):
+       * * * * 
+       *     * 
+       *     * 
+       * * * * 
+
+

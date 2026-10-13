@@ -27,5 +27,9 @@
   "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
 
   // Không hiện thông báo "không tìm thấy project" khi mở file .cs rời.
-  "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "openFiles"
+  "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "openFiles",
+
+  // Hiển thị nút điều khiển thanh bên phải trên thanh tiêu đề
+  "workbench.layoutControl.enabled": true
 }
+

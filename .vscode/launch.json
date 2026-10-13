@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET: Debug (Dừng tại dòng đầu)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "dotnet-build-current",
+      "program": "${workspaceFolder}/Lap1/bin/Debug/net8.0/Lab01_Console.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Lap1",
+      "stopAtEntry": true,
+      "console": "integratedTerminal",
+      "env": {
+        "DOTNET_ROOT": "/Users/mmo2025s/.dotnet",
+        "PATH": "/Users/mmo2025s/.dotnet:${env:PATH}"
+      }
+    },
+    {
+      "name": ".NET: Debug bình thường (Dừng tại chấm đỏ)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "dotnet-build-current",
+      "program": "${workspaceFolder}/Lap1/bin/Debug/net8.0/Lab01_Console.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/Lap1",
+      "stopAtEntry": false,
+      "console": "integratedTerminal",
+      "env": {
+        "DOTNET_ROOT": "/Users/mmo2025s/.dotnet",
+        "PATH": "/Users/mmo2025s/.dotnet:${env:PATH}"
+      }
+    }
+  ]
+}

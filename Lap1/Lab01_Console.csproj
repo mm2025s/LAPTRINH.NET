@@ -10,10 +10,7 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-  <!--
-    hello.cs là file nháp (nội dung "using s") nên không biên dịch,
-    nếu để nguyên sẽ làm project build lỗi. Loại nó khỏi danh sách biên dịch.
-  -->
+  
   <ItemGroup>
     <Compile Remove="hello.cs" />
   </ItemGroup>
