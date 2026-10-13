@@ -1,0 +1,203 @@
+================================================================================
+BÁO CÁO KẾT QUẢ THỰC HÀNH LAB 02 - LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG
+HỌC PHẦN: LẬP TRÌNH .NET (IT3212) | BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+KHOA CÔNG NGHỆ THÔNG TIN - ĐẠI HỌC CÔNG NGHỆ ĐÔNG Á
+================================================================================
+
+MÔI TRƯỜNG: .NET 8.0 SDK | macOS
+KẾT QUẢ BUILD: Build succeeded - 0 Warning(s), 0 Error(s)
+
+================================================================================
+PHẦN A: BÀI TẬP CÓ HƯỚNG DẪN (Bài 1 - 5)
+================================================================================
+
+--------------------------------------------------------------------------------
+BÀI 1: KHAI BÁO LỚP SinhVien
+--------------------------------------------------------------------------------
+- Yêu cầu: Tạo lớp SinhVien gồm MaSV, HoTen, NgaySinh, DiemTB; tạo đối tượng và in thông tin.
+- Dữ liệu thử: MaSV = "SV01", HoTen = "Nguyễn An", NgaySinh = 12/05/2005, DiemTB = 8.2
+
+KẾT QUẢ CHẠY:
+--- Bài 1: Khai báo lớp SinhVien ---
+SV01 - Nguyễn An - 12/05/2005 - 8.20 - 21 tuổi - Giỏi
+
+--------------------------------------------------------------------------------
+BÀI 2: CONSTRUCTOR VÀ NẠP CHỒNG CONSTRUCTOR
+--------------------------------------------------------------------------------
+- Yêu cầu: Bổ sung constructor không tham số và constructor đầy đủ tham số.
+- Dữ liệu thử: Constructor mặc định; Constructor với "SV02", "Trần Bình", 03/09/2005, 6.8
+
+KẾT QUẢ CHẠY:
+--- Bài 2: Constructor và nạp chồng constructor ---
+Constructor không tham số:
+Chưa có - Chưa có - 13/10/2026 - 0.00 - 0 tuổi - Yếu
+Constructor đầy đủ tham số:
+SV02 - Trần Bình - 03/09/2005 - 6.80 - 21 tuổi - Khá
+
+--------------------------------------------------------------------------------
+BÀI 3: ĐÓNG GÓI VÀ KIỂM TRA DỮ LIỆU
+--------------------------------------------------------------------------------
+- Yêu cầu: Không cho phép DiemTB ngoài [0,10] và HoTen rỗng. Dùng backing field private.
+- Dữ liệu thử:
+    + Gán HoTen = "   " (toàn khoảng trắng) -> phải báo lỗi.
+    + Gán DiemTB = 11 -> phải báo lỗi.
+    + Gán HoTen = "  Lê Cường  " -> tự động Trim.
+
+KẾT QUẢ CHẠY:
+--- Bài 3: Đóng gói và kiểm tra dữ liệu ---
+Bắt lỗi họ tên rỗng: Họ tên không được rỗng.
+Bắt lỗi điểm ngoài [0,10]: Điểm trung bình phải thuộc [0, 10]. (Parameter 'DiemTB')
+Dữ liệu hợp lệ (họ tên đã Trim):
+SV03 - Lê Cường - 15/03/2004 - 7.50 - 22 tuổi - Khá
+
+--------------------------------------------------------------------------------
+BÀI 4: PHƯƠNG THỨC NGHIỆP VỤ TinhTuoi() VÀ XepLoai()
+--------------------------------------------------------------------------------
+- Yêu cầu: Viết TinhTuoi() và XepLoai() trả về kết quả; không viết logic trong Main.
+- Dữ liệu thử: "SV04", "Phạm Dung", 20/12/2005, 9.1
+
+KẾT QUẢ CHẠY:
+--- Bài 4: Phương thức nghiệp vụ TinhTuoi() và XepLoai() ---
+Họ tên: Phạm Dung
+Ngày sinh: 20/12/2005
+Tuổi: 20
+Điểm TB: 9.10
+Xếp loại: Xuất sắc
+
+--------------------------------------------------------------------------------
+BÀI 5: QUẢN LÝ DANH SÁCH SinhVien
+--------------------------------------------------------------------------------
+- Yêu cầu: Tạo List<SinhVien>, thêm dữ liệu mẫu, in danh sách và tìm theo mã.
+- Dữ liệu thử: Thêm SV01 (8.2) và SV02 (6.8); tìm mã "SV02".
+
+KẾT QUẢ CHẠY:
+--- Bài 5: Quản lý danh sách SinhVien ---
+Danh sách sinh viên:
+SV01 - Nguyễn An - 12/05/2005 - 8.20 - 21 tuổi - Giỏi
+SV02 - Trần Bình - 03/09/2005 - 6.80 - 21 tuổi - Khá
+Mã cần tìm: SV02
+Trần Bình
+
+================================================================================
+PHẦN B: BÀI TẬP TỰ THỰC HIỆN (Bài 6 - 10)
+================================================================================
+
+--------------------------------------------------------------------------------
+BÀI 6: LỚP SanPham
+--------------------------------------------------------------------------------
+- Yêu cầu: Lớp sản phẩm có mã, tên, đơn giá, số lượng; tính thành tiền và kiểm tra dữ liệu.
+- Dữ liệu thử: SP01 Bàn phím (250000 x 3), SP02 Chuột (150000 x 5), SP03 Màn hình (3200000 x 2).
+
+KẾT QUẢ CHẠY:
+--- Bài 6: Lớp SanPham ---
+Mã     Tên                     Đơn giá     SL     Thành tiền
+SP01   Bàn phím                250,000      3        750,000
+SP02   Chuột máy tính          150,000      5        750,000
+SP03   Màn hình              3,200,000      2      6,400,000
+Tổng giá trị kho: 7,900,000
+
+Kiểm tra dữ liệu không hợp lệ:
+Bắt lỗi: Đơn giá phải >= 0. (Parameter 'DonGia')
+
+--------------------------------------------------------------------------------
+BÀI 7: LỚP TaiKhoanNganHang
+--------------------------------------------------------------------------------
+- Yêu cầu: Cài đặt nạp tiền, rút tiền, chuyển tiền; không cho số dư âm.
+- Dữ liệu thử: TK001 (1,000,000) và TK002 (500,000); nạp 2tr, rút 500k, rút quá số dư, chuyển 300k.
+
+KẾT QUẢ CHẠY:
+--- Bài 7: Lớp TaiKhoanNganHang ---
+Số dư ban đầu:
+TK: TK001 - Nguyễn An - Số dư: 1,000,000
+TK: TK002 - Trần Bình - Số dư: 500,000
+
+Nạp tiền vào TK001:
+Nạp 2,000,000 thành công. Số dư: 3,000,000
+
+Rút tiền từ TK001:
+Rút 500,000 thành công. Số dư: 2,500,000
+
+Rút quá số dư (kiểm tra chặn số dư âm):
+Số dư không đủ. Số dư hiện tại: 2,500,000
+
+Chuyển tiền TK001 -> TK002:
+Chuyển 300,000 từ TK001 sang TK002 thành công.
+
+Số dư sau cùng:
+TK: TK001 - Nguyễn An - Số dư: 2,200,000
+TK: TK002 - Trần Bình - Số dư: 800,000
+
+--------------------------------------------------------------------------------
+BÀI 8: LỚP NhanVien
+--------------------------------------------------------------------------------
+- Yêu cầu: Tính lương theo lương cơ bản, hệ số và phụ cấp; in bảng lương.
+- Công thức: Lương = LươngCoBan * HeSo + PhuCap
+- Dữ liệu thử: NV01 (5tr, 2.5, 800k), NV02 (5tr, 1.8, 500k), NV03 (6tr, 3.0, 1.2tr).
+
+KẾT QUẢ CHẠY:
+--- Bài 8: Lớp NhanVien - Bảng lương ---
+Mã     Họ tên              Lương CB  Hệ số      Phụ cấp      Tổng lương
+------------------------------------------------------------------------
+NV01   Nguyễn An          5,000,000    2.5      800,000      13,300,000
+NV02   Trần Bình          5,000,000    1.8      500,000       9,500,000
+NV03   Lê Cường           6,000,000      3    1,200,000      19,200,000
+------------------------------------------------------------------------
+Tổng quỹ lương: 42,000,000
+
+--------------------------------------------------------------------------------
+BÀI 9: LỚP HinhChuNhat
+--------------------------------------------------------------------------------
+- Yêu cầu: Dùng constructor, thuộc tính kiểm tra cạnh dương; tính chu vi và diện tích.
+- Dữ liệu thử: HCN 5x3 và 4.5x2.5; thử cạnh âm (-5, 3).
+
+KẾT QUẢ CHẠY:
+--- Bài 9: Lớp HinhChuNhat ---
+HCN 5 x 3 -> Chu vi: 16.00 - Diện tích: 15.00
+HCN 4.5 x 2.5 -> Chu vi: 14.00 - Diện tích: 11.25
+
+Kiểm tra cạnh không dương:
+Bắt lỗi: Chiều dài phải > 0. (Parameter 'ChieuDai')
+
+--------------------------------------------------------------------------------
+BÀI 10: ỨNG DỤNG QUẢN LÝ SINH VIÊN CONSOLE
+--------------------------------------------------------------------------------
+- Yêu cầu: Tạo menu thêm, sửa, xóa, tìm kiếm, sắp xếp và thống kê danh sách SinhVien.
+- Chức năng: 1.Thêm | 2.Sửa | 3.Xóa | 4.Tìm theo mã | 5.Tìm theo tên |
+              6.Hiển thị | 7.Sắp xếp theo điểm | 8.Sắp xếp theo mã | 9.Thống kê | 0.Thoát
+- Dữ liệu mẫu tự nạp: 5 sinh viên SV01..SV05.
+
+KẾT QUẢ CHẠY (chức năng 6 - Hiển thị danh sách):
+--- Bài 10: Ứng dụng quản lý sinh viên ---
+
+===== QUẢN LÝ SINH VIÊN =====
+Chọn: 6
+Mã       Họ tên               Ngày sinh        Tuổi    Điểm TB     Xếp loại
+----------------------------------------------------------------------------
+SV01     Nguyễn An            12/05/2005         21       8.20         Giỏi
+SV02     Trần Bình            03/09/2005         21       6.80          Khá
+SV03     Lê Cường             15/03/2004         22       9.30     Xuất sắc
+SV04     Phạm Dung            22/01/2006         20       4.50          Yếu
+SV05     Hoàng Em             08/07/2005         21       7.00          Khá
+
+KẾT QUẢ CHẠY (chức năng 9 - Thống kê):
+Chọn: 9
+Tổng số sinh viên: 5
+Điểm TB cao nhất : 9.30 (Lê Cường)
+Điểm TB thấp nhất: 4.50 (Phạm Dung)
+Điểm TB toàn bộ  : 7.16
+
+Số lượng theo xếp loại:
+  Yếu       : 1
+  Xuất sắc  : 1
+  Khá       : 2
+  Giỏi      : 1
+
+================================================================================
+PHẦN C: ĐÁNH GIÁ HOÀN THÀNH
+================================================================================
+- Hoàn thành đầy đủ 10/10 bài tập theo đề cương Lab 02 (IT3212).
+- Các bài tập có hướng dẫn và tự thực hiện đều được tách thành file riêng biệt.
+- Áp dụng đầy đủ 4 mục tiêu: khai báo lớp, constructor, đóng gói + kiểm tra dữ liệu,
+  quản lý List<T>.
+- Lớp SinhVien đã sẵn sàng để mở rộng bằng kế thừa ở Lab 3 và đưa lên WinForms ở Lab 4.
+- Dự án build thành công: 0 Warning, 0 Error.
