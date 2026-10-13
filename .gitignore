@@ -1,0 +1,45 @@
+# ===== .NET / C# =====
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.userosscache
+*.sln.docstates
+.vs/
+
+# ===== Rider / VS Code =====
+.idea/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/settings.json
+
+# ===== Build output =====
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww]in32/
+build/
+bld/
+[Oo]ut/
+
+# ===== NuGet =====
+*.nupkg
+packages/
+!packages/build/
+
+# ===== Kết quả chạy thử / tạm =====
+*.log
+TestResults/
+*.tmp
+
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# ===== JetBrains Rider =====
+*.sln.iml

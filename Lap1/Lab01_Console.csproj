@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Lap1</RootNamespace>
+    <AssemblyName>Lab01_Console</AssemblyName>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!--
+    hello.cs là file nháp (nội dung "using s") nên không biên dịch,
+    nếu để nguyên sẽ làm project build lỗi. Loại nó khỏi danh sách biên dịch.
+  -->
+  <ItemGroup>
+    <Compile Remove="hello.cs" />
+  </ItemGroup>
+
+</Project>

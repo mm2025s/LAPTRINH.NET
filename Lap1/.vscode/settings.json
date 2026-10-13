@@ -1,0 +1,31 @@
+{
+  // Ẩn các thư mục rác khi xem cây thư mục trong VS Code.
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+
+  // Loại trừ các thư mục build khỏi kết quả tìm kiếm.
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+
+  // Hiển thị thước đo 100 ký tự để nhắc giữ dòng code không quá dài.
+  "editor.rulers": [100],
+
+  // Tự động định dạng code khi lưu file.
+  "editor.formatOnSave": true,
+
+  // Cấu hình riêng cho file C#.
+  "[csharp]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+  },
+
+  // Cấu hình OmniSharp / C# Dev Kit.
+  "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+
+  // Không hiện thông báo "không tìm thấy project" khi mở file .cs rời.
+  "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "openFiles"
+}
