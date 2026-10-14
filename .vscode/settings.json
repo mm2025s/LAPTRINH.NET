@@ -30,6 +30,7 @@
   "dotnet.backgroundAnalysis.analyzerDiagnosticsScope": "openFiles",
 
   // Hiển thị nút điều khiển thanh bên phải trên thanh tiêu đề
-  "workbench.layoutControl.enabled": true
+  "workbench.layoutControl.enabled": true,
+  "dotnet.defaultSolution": "IT3212_Labs.sln"
 }
 
