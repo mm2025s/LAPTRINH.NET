@@ -1,0 +1,359 @@
+================================================================================
+BÁO CÁO KẾT QUẢ THỰC HÀNH LAB 03 - KẾ THỪA, ĐA HÌNH, LỚP TRỪU TƯỢNG VÀ INTERFACE
+HỌC PHẦN: LẬP TRÌNH .NET (IT3212) | BỘ MÔN CÔNG NGHỆ PHẦN MỀM
+KHOA CÔNG NGHỆ THÔNG TIN - ĐẠI HỌC CÔNG NGHỆ ĐÔNG Á
+Sinh viên thực hiện: Nguyễn Trường Giang - MSSV: 24000407
+================================================================================
+
+MÔI TRƯỜNG: .NET 8.0 SDK | macOS
+KẾT QUẢ BUILD: Build succeeded - 0 Warning(s), 0 Error(s)
+DỰ ÁN: Lab03_OOPAdvanced (thư mục lap3)
+
+================================================================================
+PHẦN A: BÀI TẬP CÓ HƯỚNG DẪN (Bài 1 - 5)
+================================================================================
+
+--------------------------------------------------------------------------------
+BÀI 1: KẾ THỪA Nguoi - SinhVien VÀ TỪ KHÓA base
+--------------------------------------------------------------------------------
+- Yêu cầu: Tạo lớp cơ sở Nguoi (HoTen, NgaySinh, GioiTinh) và lớp SinhVien kế thừa; dùng base để gọi constructor lớp cha; chứng minh quan hệ is-a.
+- Dữ liệu thử: Nguoi("Nguyễn Văn A", 08/04/1990); SinhVien("SV01", "Nguyễn An", 12/05/2005, 8.2, "Công nghệ thông tin").
+
+KẾT QUẢ CHẠY:
+--- Bài 1: Kế thừa Nguoi - SinhVien ---
+Minh họa quan hệ kế thừa: SinhVien LÀ MỘT Nguoi (is-a).
+
+Đối tượng Nguoi  : Nguyễn Văn A - 08/04/1990 - 36 tuổi
+Đối tượng SinhVien: Nguyễn An - 12/05/2005 - 21 tuổi - SV01 - 8.20
+
+Gán SinhVien cho biến kiểu Nguoi (is-a) và gọi MoTa():
+  Nguyễn An - 12/05/2005 - 21 tuổi - SV01 - 8.20
+Ép kiểu thành công -> truy cập MaSV: SV01, Ngành: Công nghệ thông tin
+
+Thứ tự gọi constructor: Nguoi(...) chạy TRƯỚC, sau đó mới đến thân SinhVien(...).
+
+--------------------------------------------------------------------------------
+BÀI 2: GHI ĐÈ PHƯƠNG THỨC MoTa()
+--------------------------------------------------------------------------------
+- Yêu cầu: Khai báo MoTa() là virtual ở Nguoi, override ở SinhVien và tái sử dụng base.MoTa(); minh họa đa hình qua List<Nguoi>.
+- Dữ liệu thử: Nguoi("Trần Văn B", 20/02/1988, "Nam"); SinhVien("SV02", "Trần Bình", 03/09/2005, 6.8); danh sách 4 phần tử gồm 2 Nguoi và 2 SinhVien.
+
+KẾT QUẢ CHẠY:
+--- Bài 2: Ghi đè phương thức MoTa() ---
+Cùng một lời gọi MoTa() nhưng kết quả khác nhau tùy kiểu đối tượng.
+
+Nguoi.MoTa()   : Trần Văn B - 20/02/1988 - 38 tuổi
+SinhVien.MoTa(): Trần Bình - 03/09/2005 - 21 tuổi - SV02 - 6.80
+
+=> SinhVien.MoTa() = base.MoTa() + phần riêng (MaSV, DiemTB).
+
+Đa hình qua danh sách Nguoi (không cần ép kiểu):
+  [Nguoi       ] Phạm Văn C - 30/11/1975 - 50 tuổi
+  [SinhVien    ] Lê Cường - 15/03/2004 - 22 tuổi - SV03 - 9.30
+  [SinhVien    ] Phạm Dung - 22/01/2006 - 20 tuổi - SV04 - 4.50
+  [Nguoi       ] Hoàng Thị D - 08/07/1995 - 31 tuổi
+
+Lưu ý: GetType().Name cho biết kiểu THỰC TẾ tại thời điểm chạy,
+quyết định phiên bản MoTa() nào được thực thi.
+
+--------------------------------------------------------------------------------
+BÀI 3: LỚP TRỪU TƯỢNG NguoiHoc VÀ TÍNH HỌC PHÍ
+--------------------------------------------------------------------------------
+- Yêu cầu: Tạo lớp trừu tượng NguoiHoc có phương thức trừu tượng TinhHocPhi(); cài đặt SinhVienChinhQuy và SinhVienLienThong.
+- Dữ liệu thử: Chính quy 18 tín chỉ (450.000 đ/TC); Liên thông 15 tín chỉ (520.000 đ/TC); thử số tín chỉ -5 để kiểm tra ràng buộc.
+
+KẾT QUẢ CHẠY:
+--- Bài 3: Lớp trừu tượng NguoiHoc ---
+Không thể khởi tạo lớp trừu tượng: new NguoiHoc() => lỗi biên dịch.
+
+Bảng học phí:
+Mã       Họ tên           Loại                Tín chỉ          Học phí
+------------------------------------------------------------------------
+NQ01     Nguyễn An        Chính quy                18        8,100,000
+LT01     Lê Cường         Liên thông               15        7,800,000
+------------------------------------------------------------------------
+Tổng học phí: 15,900,000 đ
+
+So sánh đơn giá tín chỉ:
+  Chính quy  : 450,000 đ/tín chỉ
+  Liên thông : 520,000 đ/tín chỉ
+
+Kiểm tra ràng buộc dữ liệu của lớp trừu tượng:
+  Bắt lỗi: Số tín chỉ phải >= 0. (Parameter 'SoTinChi')
+
+--------------------------------------------------------------------------------
+BÀI 4: INTERFACE IValidatable VÀ IPrintable
+--------------------------------------------------------------------------------
+- Yêu cầu: Khai báo hai interface IValidatable, IPrintable; cho SinhVien thực thi và gọi thành viên qua tham chiếu interface.
+- Dữ liệu thử: Tầng 1: mã rỗng và điểm 11 (setter chặn). Tầng 2: 4 sinh viên SV01, 1SV02, SV03 (sinh 2020), SV04.
+
+KẾT QUẢ CHẠY:
+--- Bài 4: Interface IValidatable & IPrintable ---
+SinhVien thực thi 3 interface: IValidatable, IPrintable, IXuatDuLieu
+
+>>> TẦNG 1: Setter chặn từng giá trị sai ngay khi gán
+  Bắt lỗi: Mã sinh viên không được rỗng.
+  Bắt lỗi: Điểm trung bình phải thuộc [0, 10]. (Parameter 'DiemTB')
+
+>>> TẦNG 2: IsValid() kiểm tra quy tắc nghiệp vụ trên toàn đối tượng
+
+Kiểm tra SV01     -> HỢP LỆ
+  ToDisplayText(): SV01 - Nguyễn An
+  MoTa()         : Nguyễn An - 12/05/2005 - 21 tuổi - SV01 - 8.20
+
+Kiểm tra 1SV02    -> KHÔNG HỢP LỆ: Mã sinh viên phải bắt đầu bằng chữ cái
+
+Kiểm tra SV03     -> KHÔNG HỢP LỆ: Chưa đủ tuổi nhập học (tối thiểu 15)
+
+Kiểm tra SV04     -> HỢP LỆ
+  ToDisplayText(): SV04 - Phạm Dung
+  MoTa()         : Phạm Dung - 22/01/2006 - 20 tuổi - SV04 - 4.50
+
+>>> Gọi thành viên qua THAM CHIẾU INTERFACE
+(không cần biết lớp cụ thể, chỉ cần biết hợp đồng)
+  IPrintable.ToDisplayText() -> SV05 - Hoàng Em
+  IValidatable.IsValid()     -> True
+  IXuatDuLieu.XuatCsv()      -> SV07,Đỗ Quý,08/07/2005,8.80,Giỏi
+  IXuatDuLieu.XuatJson()     -> {"maSV":"SV07","hoTen":"Đỗ Quý","ngaySinh":"08/07/2005","diemTB":8.80,"xepLoai":"Giỏi"}
+
+--------------------------------------------------------------------------------
+BÀI 5: DANH SÁCH ĐA HÌNH List<NguoiHoc>
+--------------------------------------------------------------------------------
+- Yêu cầu: Tạo List<NguoiHoc> chứa nhiều loại người học; tính tổng học phí và sắp xếp theo học phí giảm dần.
+- Dữ liệu thử: An (Chính quy, 18 TC), Bình (Liên thông, 15 TC), Cường (Cao đẳng nghề, 20 TC).
+
+KẾT QUẢ CHẠY:
+--- Bài 5: Danh sách đa hình List<NguoiHoc> ---
+
+Chi tiết học phí từng người học:
+NQ01   An       Chính quy               8,100,000 đ
+LT01   Bình     Liên thông              7,800,000 đ
+CD01   Cường    Cao đẳng nghề           7,900,000 đ
+----------------------------------------------------
+Tổng học phí: 23,800,000 đ
+
+Cùng lời gọi TinhHocPhi() nhưng mỗi lớp con cho kết quả khác nhau:
+  An               (SinhVienChinhQuy) -> 8,100,000 đ
+  Bình             (SinhVienLienThong) -> 7,800,000 đ
+  Cường            (SinhVienCaoDang) -> 7,900,000 đ
+
+Sắp xếp danh sách theo học phí giảm dần (vẫn qua kiểu NguoiHoc):
+  An              8,100,000 đ
+  Cường           7,900,000 đ
+  Bình            7,800,000 đ
+
+================================================================================
+PHẦN B: BÀI TẬP TỰ THỰC HIỆN (Bài 6 - 10)
+================================================================================
+
+--------------------------------------------------------------------------------
+BÀI 6: HỆ THỐNG NHÂN VIÊN (tính lương đa hình)
+--------------------------------------------------------------------------------
+- Yêu cầu: Lớp trừu tượng NhanVien với TinhLuong(); ba lớp con Văn phòng, Kinh doanh, Giảng viên; in bảng lương và thống kê theo chức danh.
+- Dữ liệu thử: 6 nhân viên: VP01, VP02, KD01, KD02, GV01, GV02.
+
+KẾT QUẢ CHẠY:
+--- Bài 6: Hệ thống nhân viên (tính lương đa hình) ---
+
+Mã     Họ tên           Chức danh               Lương
+--------------------------------------------------------
+VP01   Nguyễn An        Văn phòng          13,300,000
+VP02   Trần Bình        Văn phòng           9,500,000
+KD01   Lê Cường         Kinh doanh         10,500,000
+KD02   Phạm Dung        Kinh doanh         10,100,000
+GV01   Hoàng Em         Giảng viên         20,400,000
+GV02   Vũ Phúc          Giảng viên         23,650,000
+--------------------------------------------------------
+Tổng quỹ lương: 87,450,000 đ
+
+Thống kê theo chức danh:
+  Văn phòng     :     22,800,000 đ
+  Kinh doanh    :     20,600,000 đ
+  Giảng viên    :     44,050,000 đ
+
+--------------------------------------------------------------------------------
+BÀI 7: QUẢN LÝ PHƯƠNG TIỆN (interface IMove)
+--------------------------------------------------------------------------------
+- Yêu cầu: Interface IMove; lớp trừu tượng PhuongTien với XeMay, OTo, XeDap; mô phỏng thời gian và chi phí vận hành.
+- Dữ liệu thử: Xe máy 60 km/h (1.200 đ/km), Ô tô 100 km/h (4.500 đ/km), Xe đạp 20 km/h (100 đ/km) trên hành trình 150 km; thử quãng đường -10 km.
+
+KẾT QUẢ CHẠY:
+--- Bài 7: Quản lý phương tiện (interface IMove) ---
+
+Danh sách phương tiện:
+  Honda Wave | Tốc độ tối đa:     60 km/h | Chi phí:      1,200 đ/km
+  Toyota Vios | Tốc độ tối đa:    100 km/h | Chi phí:      4,500 đ/km
+  Đạp thể thao | Tốc độ tối đa:     20 km/h | Chi phí:        100 đ/km
+
+Mô phỏng hành trình 150 km:
+Phương tiện          Tốc độ      Thời gian          Chi phí
+------------------------------------------------------------
+Honda Wave            60 km/h         2.5 giờ          180,000
+Toyota Vios          100 km/h         1.5 giờ          675,000
+Đạp thể thao          20 km/h        10.7 giờ           15,000
+------------------------------------------------------------
+Tổng chi phí vận hành: 870,000 đ
+
+Kiểm tra chặn quãng đường âm:
+  Bắt lỗi: Quãng đường phải >= 0. (Parameter 'quangDuongKm')
+
+--------------------------------------------------------------------------------
+BÀI 8: QUẢN LÝ TÀI LIỆU THƯ VIỆN
+--------------------------------------------------------------------------------
+- Yêu cầu: Lớp trừu tượng TaiLieu với Sach, TapChi, LuanVan; tìm kiếm theo tiêu đề, lọc theo loại và in thời hạn mượn.
+- Dữ liệu thử: 2 sách, 2 tạp chí, 2 luận văn; tìm từ khóa "C#".
+
+KẾT QUẢ CHẠY:
+--- Bài 8: Quản lý tài liệu thư viện ---
+
+Toàn bộ tài liệu trong thư viện:
+  S001     Sách           Lập trình C# căn bản         2023 | Tác giả: Nguyễn Văn A | NXB: NXB Giáo Dục
+  S002     Sách           Cấu trúc dữ liệu và giải thuật   2022 | Tác giả: Trần Thị B | NXB: NXB Khoa Học
+  T001     Tạp chí        Tạp chí CNTT Việt Nam        2025 | Số: 128 | Kỳ: Tháng 3/2025
+  T002     Tạp chí        Tạp chí Khoa học trẻ         2024 | Số: 96 | Kỳ: Tháng 11/2024
+  L001     Luận văn       Ứng dụng AI trong giáo dục   2025 | Tác giả: Lê Văn C | Bậc: Thạc sĩ
+  L002     Luận văn       Tối ưu hóa truy vấn CSDL     2023 | Tác giả: Phạm Thị D | Bậc: Tiến sĩ
+
+--- Tìm kiếm theo từ khóa tiêu đề ---
+Từ khóa: "C#"
+  [S001] Lập trình C# căn bản - Sách (2023)
+
+--- Lọc theo kiểu tài liệu ---
+Sách (2 tài liệu):
+  [S001] Lập trình C# căn bản - Sách (2023)
+  [S002] Cấu trúc dữ liệu và giải thuật - Sách (2022)
+Tạp chí (2 tài liệu):
+  [T001] Tạp chí CNTT Việt Nam - Tạp chí (2025)
+  [T002] Tạp chí Khoa học trẻ - Tạp chí (2024)
+Luận văn (2 tài liệu):
+  [L001] Ứng dụng AI trong giáo dục - Luận văn (2025)
+  [L002] Tối ưu hóa truy vấn CSDL - Luận văn (2023)
+
+--- Thống kê theo loại và thời hạn mượn ---
+  Sách      : 2 tài liệu
+  Tạp chí   : 2 tài liệu
+  Luận văn  : 2 tài liệu
+
+Thời hạn cho mượn tối đa theo loại (đa hình):
+  S001     Sách       -> 30 ngày
+  S002     Sách       -> 30 ngày
+  T001     Tạp chí    -> 7 ngày
+  T002     Tạp chí    -> 7 ngày
+  L001     Luận văn   -> Chỉ đọc tại chỗ
+  L002     Luận văn   -> Chỉ đọc tại chỗ
+
+--------------------------------------------------------------------------------
+BÀI 9: HỆ THỐNG THANH TOÁN (interface IPayment)
+--------------------------------------------------------------------------------
+- Yêu cầu: Interface IPayment với ba hình thức thanh toán; kiểm tra hợp lệ, tính phí và ghi nhận mã giao dịch.
+- Dữ liệu thử: 3 phương thức x 3 mức tiền: 500.000, 15.000.000 và 25.000.000 đ.
+
+KẾT QUẢ CHẠY:
+--- Bài 9: Hệ thống thanh toán (interface IPayment) ---
+
+Các phương thức thanh toán khả dụng:
+  - Tiền mặt
+  - Chuyển khoản
+  - Ví điện tử (MoMo)
+
+Mô phỏng giao dịch:
+Phương thức                       Số tiền          Phí       Tổng trừ    Kết quả
+----------------------------------------------------------------------------------
+Tiền mặt                          500,000            0        500,000     GD0001
+Chuyển khoản                      500,000            0        500,000     GD0002
+Ví điện tử (MoMo)                 500,000        2,000        502,000     GD0003
+
+Tiền mặt                       15,000,000            0     15,000,000     GD0004
+Chuyển khoản                   15,000,000        7,500     15,007,500     GD0005
+Ví điện tử (MoMo)              15,000,000        2,000     15,002,000     GD0006
+
+Tiền mặt                       25,000,000            0     25,000,000     GD0007
+Chuyển khoản                   25,000,000       12,500     25,012,500     GD0008
+Ví điện tử (MoMo)              25,000,000            -              -    Từ chối
+                                                          Lý do: Vượt hạn mức 20,000,000 đ mỗi giao dịch.
+
+----------------------------------------------------------------------------------
+Tổng tiền đã ghi nhận (gồm phí): 96,524,000 đ
+
+--------------------------------------------------------------------------------
+BÀI 10: NÂNG CẤP QUẢN LÝ SINH VIÊN
+--------------------------------------------------------------------------------
+- Yêu cầu: Lớp trừu tượng SinhVienMoRong với ba loại sinh viên; tầng nghiệp vụ tìm kiếm, lọc, thống kê và xuất CSV/JSON.
+- Dữ liệu thử: 5 sinh viên: SV01, SV02 (Chính quy), LT01, LT02 (Liên thông), VL01 (Vừa làm vừa học).
+
+KẾT QUẢ CHẠY:
+--- Bài 10: Nâng cấp quản lý sinh viên ---
+
+1) DANH SÁCH SINH VIÊN (đa hình theo loại):
+Mã      Họ tên         Loại             Tuổi     Điểm          Học phí Xếp loại  
+------------------------------------------------------------------------------------
+SV01    Nguyễn An      Chính quy          21     8.20        8,100,000 Giỏi      
+SV02    Trần Bình      Chính quy          21     6.80        9,450,000 Khá       
+LT01    Lê Cường       Liên thông         22     9.30        7,800,000 Xuất sắc  
+LT02    Phạm Dung      Liên thông         20     4.50        6,240,000 Yếu       
+VL01    Hoàng Em       Vừa làm vừa học     23     7.00        7,600,000 Khá       
+
+2) TÌM KIẾM THEO MÃ:
+  Mã "LT01": Lê Cường - 15/03/2004 - 22 tuổi - LT01 - 9.30 - Liên thông
+
+3) TÌM KIẾM THEO TÊN:
+  Từ khóa chứa "u": 2 kết quả
+    SV01 - Nguyễn An (Chính quy)
+    LT02 - Phạm Dung (Liên thông)
+
+4) LỌC THEO LOẠI SINH VIÊN:
+  Chính quy         : 2 sinh viên
+  Liên thông        : 2 sinh viên
+  Vừa làm vừa học   : 1 sinh viên
+
+5) THỐNG KÊ THEO LOẠI:
+  Chính quy         : 2 sinh viên (40.0%)
+  Liên thông        : 2 sinh viên (40.0%)
+  Vừa làm vừa học   : 1 sinh viên (20.0%)
+  TỔNG CỘNG         : 5 sinh viên
+
+6) TỔNG HỌC PHÍ (tính đa hình): 39,190,000 đ
+
+7) SẮP XẾP THEO ĐIỂM GIẢM DẦN:
+Mã      Họ tên         Loại             Tuổi     Điểm          Học phí Xếp loại  
+------------------------------------------------------------------------------------
+LT01    Lê Cường       Liên thông         22     9.30        7,800,000 Xuất sắc  
+SV01    Nguyễn An      Chính quy          21     8.20        8,100,000 Giỏi      
+VL01    Hoàng Em       Vừa làm vừa học     23     7.00        7,600,000 Khá       
+SV02    Trần Bình      Chính quy          21     6.80        9,450,000 Khá       
+LT02    Phạm Dung      Liên thông         20     4.50        6,240,000 Yếu       
+
+8) XUẤT DỮ LIỆU RA CSV (qua interface IXuatDuLieu):
+MaSV,HoTen,NgaySinh,DiemTB,XepLoai,LoaiSinhVien,SoTinChi,HocPhi
+LT01,Lê Cường,15/03/2004,9.30,Xuất sắc,Liên thông,15,7800000
+SV01,Nguyễn An,12/05/2005,8.20,Giỏi,Chính quy,18,8100000
+VL01,Hoàng Em,08/07/2003,7.00,Khá,Vừa làm vừa học,20,7600000
+SV02,Trần Bình,03/09/2005,6.80,Khá,Chính quy,21,9450000
+LT02,Phạm Dung,22/01/2006,4.50,Yếu,Liên thông,12,6240000
+
+9) XUẤT DỮ LIỆU RA JSON (qua interface IXuatDuLieu):
+[
+  {"maSV":"LT01","hoTen":"Lê Cường","ngaySinh":"15/03/2004","diemTB":9.30,"xepLoai":"Xuất sắc"},
+  {"maSV":"SV01","hoTen":"Nguyễn An","ngaySinh":"12/05/2005","diemTB":8.20,"xepLoai":"Giỏi"},
+  {"maSV":"VL01","hoTen":"Hoàng Em","ngaySinh":"08/07/2003","diemTB":7.00,"xepLoai":"Khá"},
+  {"maSV":"SV02","hoTen":"Trần Bình","ngaySinh":"03/09/2005","diemTB":6.80,"xepLoai":"Khá"},
+  {"maSV":"LT02","hoTen":"Phạm Dung","ngaySinh":"22/01/2006","diemTB":4.50,"xepLoai":"Yếu"}
+]
+
+================================================================================
+PHẦN C: ĐÁNH GIÁ HOÀN THÀNH
+================================================================================
+- Hoàn thành đầy đủ 10/10 bài tập theo đề cương Lab 03 (IT3212),
+  gồm 5 bài có hướng dẫn và 5 bài tự thực hiện.
+- Mô hình hóa quan hệ kế thừa (is-a) và dùng từ khóa base để gọi
+  constructor lớp cha: SinhVien : Nguoi, SinhVienMoRong : SinhVien.
+- Ghi đè phương thức bằng virtual/override (MoTa(), TinhThoiGian(),
+  KiemTraHopLe()) và khai thác tính đa hình tại thời điểm chạy.
+- Thiết kế lớp trừu tượng (NguoiHoc, NhanVien, TaiLieu, PhuongTien,
+  SinhVienMoRong) và interface (IValidatable, IPrintable, IXuatDuLieu,
+  IMove, IPayment).
+- Vận dụng OOP vào bài toán quản lý: danh sách đa hình, tìm kiếm, lọc,
+  thống kê theo loại, tính tổng và xuất dữ liệu CSV/JSON.
+- Đóng gói dữ liệu: mọi thuộc tính dùng backing field private kèm kiểm
+  tra tại setter, kế thừa và phát huy từ Lab 02.
+- Dự án build thành công: 0 Warning, 0 Error.
