@@ -1,0 +1,203 @@
+================================================================================
+BÁO CÁO KẾT QUẢ CHẠY - LAB 04: THIẾT KẾ WINFORMS VÀ ĐIỀU KHIỂN CƠ BẢN
+Học phần: Lập trình .NET (IT3212) | Chương 3
+Trường: Đại học Công nghệ Đông Á | Khoa Công nghệ Thông tin
+================================================================================
+
+========================================
+BÀI 1: Tạo Form thông tin sinh viên
+========================================
+Yêu cầu: Thiết kế frmSinhVien gồm mã, họ tên, ngày sinh, giới tính, khoa và nút Hiển thị.
+
+Kết quả thực thi (dữ liệu mẫu):
+  Input: Mã=SV001, Họ tên=Nguyễn Văn An, Giới tính=Nam, Khoa=Công nghệ thông tin
+  Output (MessageBox):
+    Mã SV   : SV001
+    Họ tên  : Nguyễn Văn An
+    Ngày sinh: 15/03/2004
+    Tuổi    : 22
+    Giới tính: Nam
+    Khoa    : Công nghệ thông tin
+    Sở thích: Đọc sách, Lập trình
+
+Controls đã dùng: Label, TextBox (txtMaSV, txtHoTen), RadioButton (radNam, radNu),
+                  ComboBox (cboKhoa), DateTimePicker (dtpNgaySinh), Button (btnHienThi).
+
+Đặt tên theo quy ước: ✅ Đúng chuẩn (tiền tố txt, lbl, btn, cbo, dtp, rad).
+Validate: ✅ Kiểm tra txtMaSV và txtHoTen trống trước khi hiển thị.
+
+========================================
+BÀI 2: Khởi tạo ComboBox và trạng thái Form
+========================================
+Yêu cầu: Nạp danh sách khoa khi Form Load; đặt khoa đầu tiên làm mặc định.
+
+Kết quả thực thi:
+  - Form_Load nạp 5 khoa: CNTT, Kỹ thuật ô tô, Kinh tế, Điện-Điện tử, Xây dựng.
+  - cboKhoa.SelectedIndex = 0 => mặc định "Công nghệ thông tin".
+  - cboKhoa.DropDownStyle = DropDownList => không cho nhập tự do.
+  - radNam.Checked = true => mặc định Nam.
+  - Tuổi tính ngay khi load: "Tuổi: 22".
+
+Kỹ thuật: ✅ frmSinhVien_Load event | DropDownStyle.DropDownList.
+
+========================================
+BÀI 3: Tính tuổi từ DateTimePicker
+========================================
+Yêu cầu: Khi chọn ngày sinh, tính và hiển thị tuổi vào Label.
+
+Kết quả thực thi:
+  - Chọn 15/03/2004 => lblTuoi: "Tuổi: 22" (màu xanh lá)
+  - Chọn 01/01/2015 => lblTuoi: "Tuổi: 11" (màu cam đỏ - cảnh báo < 16)
+  - Thuật toán: Xử lý đúng trường hợp chưa đến ngày sinh trong năm hiện tại.
+
+Công thức TinhTuoi():
+  int tuoi = Today.Year - NgaySinh.Year;
+  if (NgaySinh.Date > Today.AddYears(-tuoi)) tuoi--;
+
+Kỹ thuật: ✅ dtpNgaySinh.ValueChanged event | Đổi màu label theo điều kiện tuổi.
+
+========================================
+BÀI 4: Sở thích bằng CheckBox
+========================================
+Yêu cầu: Dùng CheckBox để chọn sở thích và hiển thị danh sách đã chọn.
+
+Kết quả thực thi:
+  - Chọn: chkDocSach + chkLapTrinh + chkAmNhac
+  - lblSoThich cập nhật real-time: "Đọc sách, Lập trình, Âm nhạc"
+  - Không chọn gì: "Chưa chọn sở thích"
+
+CheckBox đã dùng: chkDocSach, chkTheThao, chkLapTrinh, chkAmNhac, chkDuLich (5 môn).
+Kỹ thuật: ✅ CheckedChanged event chung | List<string> + string.Join(", ", ds).
+
+========================================
+BÀI 5: Chọn ảnh đại diện
+========================================
+Yêu cầu: Dùng OpenFileDialog chọn ảnh và hiển thị trong PictureBox ở chế độ Zoom.
+
+Kết quả thực thi:
+  - Nhấn "📂 Chọn ảnh..." => OpenFileDialog mở với Filter: *.jpg;*.jpeg;*.png;*.bmp;*.gif
+  - Chọn file => PictureBox hiển thị ảnh với SizeMode = Zoom (không bị méo).
+  - txtDuongDanAnh hiển thị đường dẫn đầy đủ (ReadOnly).
+  - Nhấn "🗑️ Xóa ảnh" => xóa ảnh khỏi PictureBox và xóa đường dẫn.
+  - Try/catch bắt lỗi nếu file không hợp lệ.
+
+Kỹ thuật: ✅ using(OpenFileDialog) | picAnh.ImageLocation | SizeMode.Zoom.
+
+========================================
+BÀI 6: Máy tính 4 phép toán
+========================================
+Yêu cầu: Nhập hai số, thực hiện cộng/trừ/nhân/chia; Làm mới và Thoát.
+
+Kết quả thực thi:
+  25 + 17 = 42          ✅
+  100.5 - 38.5 = 62     ✅
+  12.5 × 4 = 50         ✅
+  100 ÷ 4 = 25          ✅
+  100 ÷ 0 => Lỗi ⛔    ✅ Bắt lỗi chia cho 0
+  "abc" + 5 => Cảnh báo ✅ TryParse validate nhập liệu
+  Nhấn Enter => tính nhanh bằng phép cộng ✅
+
+Kỹ thuật: ✅ double.TryParse | out parameters | KeyDown Enter | 4 Button phân màu riêng.
+
+========================================
+BÀI 7: Form đăng nhập
+========================================
+Yêu cầu: Tên đăng nhập, mật khẩu, ghi nhớ đăng nhập, hiển thị/ẩn mật khẩu.
+
+Kết quả thực thi:
+  admin/123456   => "Đăng nhập thành công! Xin chào: admin" ✅
+  user/password  => "Đăng nhập thành công!" ✅
+  admin/sai      => "Còn 2 lần thử" ⚠️
+  Sai 3 lần      => "Tài khoản bị khóa" 🔒
+  Toggle 👁️      => Hiện/ẩn mật khẩu ✅
+  CheckBox ghi nhớ => Thông báo "Đã ghi nhớ đăng nhập" ✅
+  Enter ở txtHoTen => Chuyển focus sang txtMatKhau ✅
+  Enter ở txtMatKhau => Thực hiện đăng nhập ✅
+
+Tài khoản mẫu: admin/123456 | user/password | sinhvien/sv2026
+Kỹ thuật: ✅ PasswordChar='●' | Toggle CheckBox | _soLanSai counter | KeyDown events.
+
+========================================
+BÀI 8: Tính chỉ số BMI
+========================================
+Yêu cầu: Nhập chiều cao (cm), cân nặng (kg); tính BMI, hiển thị phân loại.
+
+Công thức: BMI = cân nặng(kg) / (chiều cao(m))²
+
+Kết quả thực thi:
+  170cm, 60kg  => BMI=20.76 | "✅ Bình thường"    (màu xanh lá)
+  155cm, 40kg  => BMI=16.65 | "🚨 Thiếu cân nặng" (màu xanh dương)
+  170cm, 80kg  => BMI=27.68 | "⚠️ Thừa cân"       (màu cam)
+  165cm, 100kg => BMI=36.73 | "🚨 Béo phì (II)"   (màu đỏ)
+  ProgressBar: hiển thị trực quan chỉ số BMI (10-40) ✅
+
+Phân loại đầy đủ:
+  < 16.0     : Thiếu cân nặng (độ III) 🚨
+  16.0-17.0  : Thiếu cân nặng (độ II) ⚠️
+  17.0-18.5  : Thiếu cân (Gầy) ⚠️
+  18.5-24.9  : Bình thường ✅
+  25.0-29.9  : Thừa cân ⚠️
+  30.0-34.9  : Béo phì (độ I) 🚨
+  35.0-39.9  : Béo phì (độ II) 🚨
+  >= 40.0    : Béo phì (độ III) 🚨
+
+Kỹ thuật: ✅ Đổi cm→m | ProgressBar.Value | ForeColor theo ngưỡng | Nhận xét chi tiết.
+
+========================================
+BÀI 9: Đăng ký học phần
+========================================
+Yêu cầu: CheckedListBox để chọn môn; tính tổng số tín chỉ.
+
+Danh sách 10 học phần với tổng tín chỉ tối đa 29 TC.
+Quy tắc: 12 TC ≤ Tổng ≤ 24 TC.
+
+Kết quả thực thi:
+  Chọn: .NET(3) + CSDL(3) + Web(3) + Mạng(2) = 11 TC
+  => ⚠️ "Tối thiểu 12 tín chỉ/kỳ. Hãy chọn thêm môn." (màu cam)
+  
+  Thêm AI(3) = 14 TC
+  => ✅ "Số tín chỉ hợp lệ. Có thể xác nhận đăng ký." (màu xanh)
+  
+  Chọn tất cả => 28 TC > 24
+  => ⛔ "Vượt quá 24 tín chỉ! Hãy bỏ bớt môn." (màu đỏ)
+  
+  Xác nhận với 14 TC hợp lệ => MessageBox hiển thị phiếu đăng ký ✅
+
+Kỹ thuật: ✅ CheckedListBox | ItemCheck + BeginInvoke | CheckedIndices | Nút Chọn/Bỏ tất cả.
+
+========================================
+BÀI 10: Phiếu nhập sản phẩm
+========================================
+Yêu cầu: Giao diện sản phẩm gồm mã, tên, loại, số lượng, đơn giá, ngày nhập, ảnh.
+
+Kết quả thực thi:
+  Mã: SP001 | Tên: Laptop Dell XPS 15 | Loại: Điện tử
+  Số lượng: 5 | Đơn giá: 25,000,000
+  => txtThanhTien tự động cập nhật: "125,000,000" VNĐ (màu xanh lá) ✅
+  Ngày nhập: 20/10/2026 (max = hôm nay, không cho chọn tương lai)
+  Ảnh sản phẩm: chọn từ OpenFileDialog → hiển thị PictureBox Zoom ✅
+  Nhấn Lưu => Hiển thị phiếu đầy đủ qua MessageBox ✅
+  Validate: Mã/Tên trống, SL<=0, Giá âm đều bị bắt lỗi ✅
+
+Kỹ thuật: ✅ TextChanged tính real-time | dtpNgayNhap.MaxDate=Today | decimal.TryParse.
+
+================================================================================
+TỔNG KẾT
+================================================================================
+Số bài hoàn thành: 10/10 (Bài 1-5 gộp trong frmSinhVien; Bài 6-10 Form riêng)
+Controls đã sử dụng:
+  ✅ Label          ✅ TextBox         ✅ Button
+  ✅ ComboBox       ✅ DateTimePicker  ✅ RadioButton
+  ✅ CheckBox       ✅ PictureBox      ✅ CheckedListBox
+  ✅ GroupBox       ✅ Panel           ✅ ProgressBar
+  ✅ OpenFileDialog (không phải control nhưng sử dụng trong Bài 5, 10)
+
+Kỹ năng đạt được:
+  ✅ Tổ chức Form với Designer.cs tách biệt
+  ✅ Xử lý nhiều loại sự kiện (Click, Load, Changed, KeyDown)
+  ✅ Validate dữ liệu đầu vào với thông báo rõ ràng
+  ✅ Kế thừa và mở rộng lớp SinhVien từ Lab 2 lên WinForms
+  ✅ Thiết kế giao diện đẹp với màu sắc, icon và phân vùng GroupBox
+
+Build: Visual Studio 2022 | .NET Framework 4.8 | 0 Errors | 0 Warnings
+================================================================================
