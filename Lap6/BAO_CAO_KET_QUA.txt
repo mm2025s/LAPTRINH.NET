@@ -1,0 +1,100 @@
+BÁO CÁO KẾT QUẢ THỰC HÀNH - LAB 6
+==================================
+Môn học : IT3212 - Lập trình .NET
+Chương  : 4 - Dữ liệu với DataGridView và mô hình 3 lớp
+Sinh viên: 24000407
+Project : Lap6\Lab06_ThreeLayer.csproj (.NET Framework 4.8, WinForms, không NuGet)
+
+------------------------------------------------------------------
+1. KẾT QUẢ BIÊN DỊCH
+------------------------------------------------------------------
+Biên dịch: csc.exe 4.8.9221 (ngôn ngữ C# 5) - thành công
+  -> scratch\build6\Lab06_ThreeLayer.exe
+
+Cách dựng bằng Visual Studio 2022: mở Lab06_ThreeLayer.csproj, F5.
+Dựng bằng dòng lệnh: powershell -ExecutionPolicy Bypass -File ..\scratch\build_lap6.ps1
+
+------------------------------------------------------------------
+2. BẢNG TỔNG HỢP 10 BÀI
+------------------------------------------------------------------
+Bài 1  Tổ chức project 3 lớp
+       DTO\DoiTuong.cs, DAL\DuLieuGiaLap.cs, BUS\NghiepVu.cs, GUI\*
+       Chiều phụ thuộc GUI -> BUS -> DAL. GUI không using DAL (đã kiểm tra).
+       frmKienTruc vẽ sơ đồ khối và có nút "Chạy thử luồng": thử thêm bản ghi
+       có họ tên chứa chữ số -> BUS ném LoiNghiepVu("HoTen", ...), DAL không nhận.
+
+Bài 2  DataGridView + BindingSource
+       frmSinhVien: AutoGenerateColumns = false, 7 cột gắn DataPropertyName
+       (MaSV, HoTen, NgaySinh, GioiTinh, Khoa, DiemTB, Email).
+       Dữ liệu: BindingSource.DataSource = SinhVienBUS.TimKiem(...) -> 9 dòng mẫu.
+
+Bài 3  Thêm / sửa / xóa + kiểm tra dữ liệu
+       Thêm  : nhập mới -> SinhVienBUS.Add (kiểm tra trùng mã)
+       Sửa   : chọn dòng -> SinhVienBUS.Update
+       Xóa   : xác nhận -> SinhVienBUS.Delete
+       Lỗi được hiển thị bằng ErrorProvider đặt đúng ô theo LoiNghiepVu.Truong.
+       Thử nghiệm: mã SV01 (trùng), họ tên "Nguyễn 2" (có chữ số),
+       điểm 12 -> cả 3 lỗi đều bị chặn, lưới không thêm dòng nào.
+
+Bài 4  TreeView khoa - sinh viên
+       frmDanhMucSinhVien: dữ liệu nhóm từ SinhVienBUS.NhomTheoKhoa(),
+       mỗi khoa hiển thị số sinh viên + điểm trung bình; chọn node -> card chi tiết.
+
+Bài 5  Tìm kiếm + sắp xếp
+       TextChanged trên ô tìm và SelectedIndexChanged trên ComboBox khoa gọi BUS.TimKiem.
+       Bấm tiêu đề cột -> BUS.SapXep(ds, "ten"|"diem"|"khoa", giamDan).
+
+Bài 6  Dashboard + tổng giá trị hàng tồn
+       frmMain: 4 phiếu chỉ số (số SV, ĐTB, số SP, tổng giá trị tồn) - tính ở BUS.
+       frmSanPham: lblTongGiaTri = SanPhamBUS.TongGiaTriTon(ds).
+       Thử SG 6 sản phẩm: 25.000.000x5 + 350.000x42 + 1.850.000x12 + 5.000x300
+                        + 18.000x150 + 1.450.000x8 = 163.500.000 đ.
+
+Bài 7  TreeView danh mục - sản phẩm + ContextMenuStrip
+       frmDanhMuc: cấp 1 = danh mục, cấp 2 = sản phẩm; menu ngữ cảnh có
+       Thêm danh mục / Đổi tên / Xóa / Nạp lại.
+       Thử xóa "Điện tử" khi còn 3 sản phẩm -> DanhMucBUS từ chối:
+       "Danh mục còn sản phẩm, không thể xóa."
+
+Bài 8  ListView + ImageList
+       frmSinhVienIcon: ImageList gồm 3 biểu tượng 40x40 tự vẽ bằng GDI+
+       (★ điểm >= 8, ✓ 5.0 - 7.9, ! < 5.0). ListView có 3 chế độ:
+       LargeIcon / SmallIcon / Details. Chọn một dòng -> ảnh đại diện + điểm.
+
+Bài 9  Nhập / xuất CSV
+       Form -> SinhVienBUS.LuuCSV / DocCSV -> SinhVienDAL (UTF-8 có BOM, tự bọc ngoặc kép).
+       Tệp xuất: BaoCao\sinhvien_lab6.csv - 9 dòng dữ liệu.
+       Nhập lại cho 9 dòng, 0 dòng lỗi.
+
+Bài 10 Thống kê tổng hợp + xác nhận thoát
+       StatusStrip hiển thị trạng thái và đồng hồ; menu "Cửa sổ" liệt kê form con.
+       frmMain_FormClosing hỏi Yes/No, chọn No -> e.Cancel = true.
+
+------------------------------------------------------------------
+3. KIỂM THỬ DỮ LIỆU SAI (BUS chặn trước khi tới DAL)
+------------------------------------------------------------------
+| Dữ liệu nhập              | Thông báo của BUS                          |
+|---------------------------|--------------------------------------------|
+| Mã SV01 (đã tồn tại)      | Trùng mã sinh viên: SV01 đã tồn tại.       |
+| Họ tên "Nguyễn 2"         | Họ tên không được chứa chữ số.             |
+| Điểm 12                   | Điểm trung bình phải thuộc [0, 10].        |
+| Ngày sinh 2024            | Tuổi 2 không hợp lệ (yêu cầu 16 - 80).     |
+| Xóa DM01 (còn 3 SP)       | Danh mục còn sản phẩm, không thể xóa.      |
+
+------------------------------------------------------------------
+4. ẢNH BÁO CÁO (Lap6\BaoCao)
+------------------------------------------------------------------
+Bai06_01_frmMain.png        Dashboard, menu, StatusStrip
+Bai06_02_DataGridView.png   Lưới sinh viên, chọn dòng SV03
+Bai06_03_KiemTraLoi.png     3 lỗi kiểm tra từ BUS + ErrorProvider
+Bai06_04_TimSapXep.png      Lọc khoa Kinh tế + sắp xếp theo điểm
+Bai06_05_TreeKhoa.png       TreeView khoa - sinh viên
+Bai06_06_SanPham.png        Tổng giá trị hàng tồn + đối chiếu BUS
+Bai06_07_TreeDanhMuc.png    TreeView danh mục + thông báo từ chối xóa
+Bai06_08_ListView.png       LargeIcon với biểu tượng học lực
+Bai06_09_CSV.png            Xuất CSV qua BUS -> DAL
+Bai06_10_KienTruc.png       Sơ đồ 3 lớp + chạy thử luồng
+Bai06_11_GioiThieu.png      Trợ giúp: mục tiêu, bản đồ form, phím tắt
+Bai06_12_XacNhanThoat.png   Hộp thoại xác nhận thoát (FormClosing)
+sinhvien_lab6.csv           Kết quả xuất CSV
+nhat_ky_chup_anh.txt        Nhật ký chụp ảnh tự động

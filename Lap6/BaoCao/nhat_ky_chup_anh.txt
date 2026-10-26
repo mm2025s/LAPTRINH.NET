@@ -1,0 +1,7 @@
+﻿===== T? D?NG CH?P ?NH BAO CAO - LAB 6 =====
+Th?i di?m    : 26/10/2026 20:53:51
+Thu m?c ?nh  : d:\LAPTRINH.NET\Lap6\BaoCao
+Ch? d? ch?p  : DrawToBitmap (không có màn hình)
+
+
+===== HOAN T?T =====
