@@ -1,0 +1,6 @@
+﻿19:19:14 - FormChupAnh
+System.InvalidOperationException: Thread exception mode cannot be changed once any Controls are created on the thread.
+   at System.Windows.Forms.NativeWindow.SetUnhandledExceptionModeInternal(UnhandledExceptionMode mode, Boolean threadScope)
+   at System.Windows.Forms.Application.SetUnhandledExceptionMode(UnhandledExceptionMode mode, Boolean threadScope)
+   at Lab05_MultiForm.BaoCaoTools.TrinhChupAnh.Chay()
+   at Lab05_MultiForm.Program.FormChupAnh.OnLoad(EventArgs e)

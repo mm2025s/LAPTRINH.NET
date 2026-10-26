@@ -1,4 +1,4 @@
-namespace Lab04_WinFormsBasic.Forms
+﻿﻿﻿namespace Lab04_WinFormsBasic.Forms
 {
     partial class frmDangNhap
     {
@@ -35,7 +35,7 @@ namespace Lab04_WinFormsBasic.Forms
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White;
             this.lblHeader.Height = 60;
-            this.lblHeader.Text = "🔒 Đăng Nhập Hệ Thống";
+            this.lblHeader.Text = "≡ƒöÆ ─É─âng Nhß║¡p Hß╗ç Thß╗æng";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // lblSubHeader
@@ -45,32 +45,32 @@ namespace Lab04_WinFormsBasic.Forms
             this.lblSubHeader.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblSubHeader.ForeColor = System.Drawing.Color.FromArgb(200, 190, 240);
             this.lblSubHeader.Height = 28;
-            this.lblSubHeader.Text = "Bài 7: Form Đăng Nhập | IT3212 Lab 4";
+            this.lblSubHeader.Text = "B├ái 7: Form ─É─âng Nhß║¡p | IT3212 Lab 4";
             this.lblSubHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // grpDangNhap
             this.grpDangNhap.Location = new System.Drawing.Point(12, 102);
             this.grpDangNhap.Size = new System.Drawing.Size(330, 205);
-            this.grpDangNhap.Text = "Thông tin đăng nhập";
+            this.grpDangNhap.Text = "Th├┤ng tin ─æ─âng nhß║¡p";
             this.grpDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.grpDangNhap.ForeColor = System.Drawing.Color.FromArgb(49, 27, 146);
 
-            this.lblTenDN.Location = new System.Drawing.Point(10, 28); this.lblTenDN.Size = new System.Drawing.Size(110, 23); this.lblTenDN.Text = "Tên đăng nhập:"; this.lblTenDN.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblTenDN.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
-            this.txtTenDangNhap.Location = new System.Drawing.Point(130, 25); this.txtTenDangNhap.Size = new System.Drawing.Size(185, 23); this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtTenDangNhap.PlaceholderText = "Nhập tên đăng nhập...";
+            this.lblTenDN.Location = new System.Drawing.Point(10, 28); this.lblTenDN.Size = new System.Drawing.Size(110, 23); this.lblTenDN.Text = "T├¬n ─æ─âng nhß║¡p:"; this.lblTenDN.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblTenDN.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(130, 25); this.txtTenDangNhap.Size = new System.Drawing.Size(185, 23); this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtTenDangNhap, "Nhß║¡p t├¬n ─æ─âng nhß║¡p...");
 
-            this.lblMatKhau.Location = new System.Drawing.Point(10, 62); this.lblMatKhau.Size = new System.Drawing.Size(110, 23); this.lblMatKhau.Text = "Mật khẩu:"; this.lblMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblMatKhau.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
-            this.txtMatKhau.Location = new System.Drawing.Point(130, 59); this.txtMatKhau.Size = new System.Drawing.Size(145, 23); this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtMatKhau.PasswordChar = '●'; this.txtMatKhau.PlaceholderText = "Mật khẩu...";
+            this.lblMatKhau.Location = new System.Drawing.Point(10, 62); this.lblMatKhau.Size = new System.Drawing.Size(110, 23); this.lblMatKhau.Text = "Mß║¡t khß║⌐u:"; this.lblMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblMatKhau.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            this.txtMatKhau.Location = new System.Drawing.Point(130, 59); this.txtMatKhau.Size = new System.Drawing.Size(145, 23); this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtMatKhau.PasswordChar = '●'; Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtMatKhau, "Mß║¡t khß║⌐u...");
 
             this.btnToggleMatKhau.Location = new System.Drawing.Point(282, 59); this.btnToggleMatKhau.Size = new System.Drawing.Size(38, 23);
-            this.btnToggleMatKhau.Text = "👁️"; this.btnToggleMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnToggleMatKhau.Text = "≡ƒæü∩╕Å"; this.btnToggleMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnToggleMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnToggleMatKhau.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(150, 150, 180);
             this.btnToggleMatKhau.BackColor = System.Drawing.Color.White; this.btnToggleMatKhau.Cursor = System.Windows.Forms.Cursors.Hand;
 
-            this.chkHienMatKhau.Location = new System.Drawing.Point(130, 92); this.chkHienMatKhau.Size = new System.Drawing.Size(180, 20); this.chkHienMatKhau.Text = "Hiển thị mật khẩu"; this.chkHienMatKhau.Font = new System.Drawing.Font("Segoe UI", 8.5F);
-            this.chkGhiNho.Location = new System.Drawing.Point(130, 118); this.chkGhiNho.Size = new System.Drawing.Size(180, 20); this.chkGhiNho.Text = "Ghi nhớ đăng nhập"; this.chkGhiNho.Font = new System.Drawing.Font("Segoe UI", 8.5F); this.chkGhiNho.ForeColor = System.Drawing.Color.FromArgb(49, 27, 146);
+            this.chkHienMatKhau.Location = new System.Drawing.Point(130, 92); this.chkHienMatKhau.Size = new System.Drawing.Size(180, 20); this.chkHienMatKhau.Text = "Hiß╗ân thß╗ï mß║¡t khß║⌐u"; this.chkHienMatKhau.Font = new System.Drawing.Font("Segoe UI", 8.5F);
+            this.chkGhiNho.Location = new System.Drawing.Point(130, 118); this.chkGhiNho.Size = new System.Drawing.Size(180, 20); this.chkGhiNho.Text = "Ghi nhß╗¢ ─æ─âng nhß║¡p"; this.chkGhiNho.Font = new System.Drawing.Font("Segoe UI", 8.5F); this.chkGhiNho.ForeColor = System.Drawing.Color.FromArgb(49, 27, 146);
 
             this.lblTrangThai.Location = new System.Drawing.Point(10, 155); this.lblTrangThai.Size = new System.Drawing.Size(310, 40);
-            this.lblTrangThai.Text = "💡 Gợi ý: admin/123456"; this.lblTrangThai.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic); this.lblTrangThai.ForeColor = System.Drawing.Color.FromArgb(100, 100, 150);
+            this.lblTrangThai.Text = "≡ƒÆí Gß╗úi ├╜: admin/123456"; this.lblTrangThai.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic); this.lblTrangThai.ForeColor = System.Drawing.Color.FromArgb(100, 100, 150);
 
             this.grpDangNhap.Controls.AddRange(new System.Windows.Forms.Control[] {
                 this.lblTenDN, this.txtTenDangNhap, this.lblMatKhau, this.txtMatKhau,
@@ -82,19 +82,19 @@ namespace Lab04_WinFormsBasic.Forms
             this.pnlBtns.BackColor = System.Drawing.Color.FromArgb(237, 231, 246);
 
             this.btnDangNhap.Size = new System.Drawing.Size(120, 36); this.btnDangNhap.Location = new System.Drawing.Point(15, 9);
-            this.btnDangNhap.Text = "🔓 Đăng nhập"; this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnDangNhap.Text = "≡ƒöô ─É─âng nhß║¡p"; this.btnDangNhap.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnDangNhap.FlatAppearance.BorderSize = 0;
             this.btnDangNhap.BackColor = System.Drawing.Color.FromArgb(49, 27, 146); this.btnDangNhap.ForeColor = System.Drawing.Color.White;
             this.btnDangNhap.Cursor = System.Windows.Forms.Cursors.Hand;
 
             this.btnDangKy.Size = new System.Drawing.Size(110, 36); this.btnDangKy.Location = new System.Drawing.Point(145, 9);
-            this.btnDangKy.Text = "📝 Đăng ký"; this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnDangKy.Text = "≡ƒô¥ ─É─âng k├╜"; this.btnDangKy.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnDangKy.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnDangKy.FlatAppearance.BorderSize = 0;
             this.btnDangKy.BackColor = System.Drawing.Color.FromArgb(56, 142, 60); this.btnDangKy.ForeColor = System.Drawing.Color.White;
             this.btnDangKy.Cursor = System.Windows.Forms.Cursors.Hand;
 
             this.btnHuy.Size = new System.Drawing.Size(90, 36); this.btnHuy.Location = new System.Drawing.Point(265, 9);
-            this.btnHuy.Text = "❌ Hủy"; this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.btnHuy.Text = "Γ¥î Hß╗ºy"; this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(97, 97, 97); this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -114,7 +114,7 @@ namespace Lab04_WinFormsBasic.Forms
             this.MaximizeBox = false;
             this.Name = "frmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bài 7: Form Đăng Nhập";
+            this.Text = "B├ái 7: Form ─É─âng Nhß║¡p";
 
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);

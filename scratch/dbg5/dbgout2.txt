@@ -1,0 +1,23 @@
+>> frmMain ...
+   created {Width=1140, Height=668}
+   shown
+   ok: frmMain
+>> frmSinhVien ...
+EXC frmSinhVien: ArgumentException - Control does not support transparent background colors.
+   ok: frmSinhVien
+>> frmChiTiet ...
+EXC frmChiTiet: ArgumentException - Control does not support transparent background colors.
+   ok: frmChiTiet
+>> frmDanhSach ...
+EXC frmDanhSach: ArgumentException - Control does not support transparent background colors.
+   ok: frmDanhSach
+>> frmDangNhap ...
+   shown {Width=416, Height=434}
+   ok: frmDangNhap
+>> frmTimKiem ...
+   shown {Width=688, Height=440}
+   ok: frmTimKiem
+>> frmGioiThieu ...
+   shown {Width=760, Height=528}
+   ok: frmGioiThieu
+DONE

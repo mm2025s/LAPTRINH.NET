@@ -1,0 +1,20 @@
+﻿=== BAT DAU 19:21:26 ===
+TIMEOUT - kill
+--- STDOUT ---
+[BaoCao] ===== T? D?NG CH?P ?NH BAO CAO - LAB 5 =====
+[BaoCao] Th?i di?m     : 26/10/2026 19:21:26
+[BaoCao] Thu m?c ?nh   : d:\LAPTRINH.NET\Lap5\BaoCao
+[BaoCao] Mαn h∞nh      : 1080x1920
+[BaoCao] Ch? d? ch?p   : DrawToBitmap (kh⌠ng c≤ mαn h∞nh hi?n th?)
+[BaoCao] 
+[frmMain] load: bat dau
+[frmMain] co mdiClient
+[frmMain] dashboard parent ok
+[frmMain] dashboard tinh xong
+[frmMain] ?ng d?ng kh?i d?ng - chαo m?ng b?n d?n v?i Lab 5!
+
+--- STDERR ---
+
+=== KET THUC 19:22:56 ===
+  Bai05_01_frmMain.png  44087  19:16:08
+  nhat_ky_chup_anh.txt  160  19:21:26

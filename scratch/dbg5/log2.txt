@@ -1,0 +1,20 @@
+[BaoCao] ===== T? D?NG CH?P ?NH BAO CAO - LAB 5 =====
+[BaoCao] Th?i di?m     : 26/10/2026 19:04:11
+[BaoCao] Thu m?c ?nh   : D:\LAPTRINH.NET\scratch\build5\BaoCao
+[BaoCao] Màn hình      : 1080x1920
+[BaoCao] Ch? d? ch?p   : DrawToBitmap (không có màn hình hi?n th?)
+[BaoCao] 
+[BaoCao] L?I: System.ArgumentException: MDI child forms can be added only to an MdiClient.
+Parameter name: value
+   at System.Windows.Forms.MdiClient.ControlCollection.Add(Control value)
+   at Lab05_MultiForm.Forms.frmMain.frmMain_Load(Object sender, EventArgs e)
+   at System.Windows.Forms.Form.OnLoad(EventArgs e)
+   at System.Windows.Forms.Form.OnCreateControl()
+   at System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   at System.Windows.Forms.Control.CreateControl()
+   at System.Windows.Forms.Control.WmShowWindow(Message& m)
+   at System.Windows.Forms.Control.WndProc(Message& m)
+   at System.Windows.Forms.Form.WmShowWindow(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+[BaoCao] [Bài 10 + Bài 5] frmMain: MenuStrip, StatusStrip (d?ng h?), 4 phi?u ch? s?, MDI
+[BaoCao] Da luu: Bai05_01_frmMain.png (1192x720)

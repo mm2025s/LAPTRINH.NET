@@ -1,0 +1,8 @@
+[BaoCao] ===== T? D?NG CH?P ?NH BAO CAO - LAB 5 =====
+[BaoCao] Th?i di?m     : 26/10/2026 19:04:58
+[BaoCao] Thu m?c ?nh   : D:\LAPTRINH.NET\scratch\build5\BaoCao
+[BaoCao] Màn hình      : 1080x1920
+[BaoCao] Ch? d? ch?p   : DrawToBitmap (không có màn hình hi?n th?)
+[BaoCao] 
+[BaoCao] [Bài 10 + Bài 5] frmMain: MenuStrip, StatusStrip (d?ng h?), 4 phi?u ch? s?, MDI
+[BaoCao] Da luu: Bai05_01_frmMain.png (1192x720)

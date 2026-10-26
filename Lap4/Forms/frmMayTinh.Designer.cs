@@ -1,4 +1,4 @@
-namespace Lab04_WinFormsBasic.Forms
+﻿namespace Lab04_WinFormsBasic.Forms
 {
     partial class frmMayTinh
     {
@@ -44,20 +44,20 @@ namespace Lab04_WinFormsBasic.Forms
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White;
             this.lblHeader.Height = 50;
-            this.lblHeader.Text = "🔢 Bài 6: Máy Tính 4 Phép Toán";
+            this.lblHeader.Text = "ðŸ”¢ BÃ i 6: MÃ¡y TÃ­nh 4 PhÃ©p ToÃ¡n";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // grpNhap
             this.grpNhap.Location = new System.Drawing.Point(12, 62);
             this.grpNhap.Size = new System.Drawing.Size(340, 100);
-            this.grpNhap.Text = "Nhập số";
+            this.grpNhap.Text = "Nháº­p sá»‘";
             this.grpNhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.grpNhap.ForeColor = System.Drawing.Color.FromArgb(0, 100, 90);
 
-            this.lblSo1.Location = new System.Drawing.Point(10, 28); this.lblSo1.Size = new System.Drawing.Size(80, 23); this.lblSo1.Text = "Số thứ nhất:"; this.lblSo1.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblSo1.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
-            this.txtSo1.Location = new System.Drawing.Point(100, 25); this.txtSo1.Size = new System.Drawing.Size(220, 23); this.txtSo1.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtSo1.PlaceholderText = "Nhập số 1...";
-            this.lblSo2.Location = new System.Drawing.Point(10, 62); this.lblSo2.Size = new System.Drawing.Size(80, 23); this.lblSo2.Text = "Số thứ hai:"; this.lblSo2.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblSo2.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
-            this.txtSo2.Location = new System.Drawing.Point(100, 59); this.txtSo2.Size = new System.Drawing.Size(220, 23); this.txtSo2.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtSo2.PlaceholderText = "Nhập số 2...";
+            this.lblSo1.Location = new System.Drawing.Point(10, 28); this.lblSo1.Size = new System.Drawing.Size(80, 23); this.lblSo1.Text = "Sá»‘ thá»© nháº¥t:"; this.lblSo1.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblSo1.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            this.txtSo1.Location = new System.Drawing.Point(100, 25); this.txtSo1.Size = new System.Drawing.Size(220, 23); this.txtSo1.Font = new System.Drawing.Font("Segoe UI", 9F); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtSo1, "Nháº­p sá»‘ 1...");
+            this.lblSo2.Location = new System.Drawing.Point(10, 62); this.lblSo2.Size = new System.Drawing.Size(80, 23); this.lblSo2.Text = "Sá»‘ thá»© hai:"; this.lblSo2.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblSo2.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            this.txtSo2.Location = new System.Drawing.Point(100, 59); this.txtSo2.Size = new System.Drawing.Size(220, 23); this.txtSo2.Font = new System.Drawing.Font("Segoe UI", 9F); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtSo2, "Nháº­p sá»‘ 2...");
 
             this.grpNhap.Controls.AddRange(new System.Windows.Forms.Control[] {
                 this.lblSo1, this.txtSo1, this.lblSo2, this.txtSo2 });
@@ -65,7 +65,7 @@ namespace Lab04_WinFormsBasic.Forms
             // grpPhepTinh
             this.grpPhepTinh.Location = new System.Drawing.Point(12, 175);
             this.grpPhepTinh.Size = new System.Drawing.Size(340, 70);
-            this.grpPhepTinh.Text = "Chọn phép tính";
+            this.grpPhepTinh.Text = "Chá»n phÃ©p tÃ­nh";
             this.grpPhepTinh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.grpPhepTinh.ForeColor = System.Drawing.Color.FromArgb(0, 100, 90);
 
@@ -80,9 +80,9 @@ namespace Lab04_WinFormsBasic.Forms
                 };
 
             setOpBtn(this.btnCong, "+", System.Drawing.Color.FromArgb(63, 81, 181), 10);
-            setOpBtn(this.btnTru, "−", System.Drawing.Color.FromArgb(233, 30, 99), 90);
-            setOpBtn(this.btnNhan, "×", System.Drawing.Color.FromArgb(76, 175, 80), 170);
-            setOpBtn(this.btnChia, "÷", System.Drawing.Color.FromArgb(255, 87, 34), 250);
+            setOpBtn(this.btnTru, "âˆ’", System.Drawing.Color.FromArgb(233, 30, 99), 90);
+            setOpBtn(this.btnNhan, "Ã—", System.Drawing.Color.FromArgb(76, 175, 80), 170);
+            setOpBtn(this.btnChia, "Ã·", System.Drawing.Color.FromArgb(255, 87, 34), 250);
 
             this.grpPhepTinh.Controls.AddRange(new System.Windows.Forms.Control[] {
                 this.btnCong, this.btnTru, this.btnNhan, this.btnChia });
@@ -90,12 +90,12 @@ namespace Lab04_WinFormsBasic.Forms
             // grpKetQua
             this.grpKetQua.Location = new System.Drawing.Point(12, 258);
             this.grpKetQua.Size = new System.Drawing.Size(340, 95);
-            this.grpKetQua.Text = "Kết quả";
+            this.grpKetQua.Text = "Káº¿t quáº£";
             this.grpKetQua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.grpKetQua.ForeColor = System.Drawing.Color.FromArgb(0, 100, 90);
 
             this.lblBieuThuc.Location = new System.Drawing.Point(10, 22); this.lblBieuThuc.Size = new System.Drawing.Size(315, 23);
-            this.lblBieuThuc.Text = "Nhập hai số và chọn phép tính...";
+            this.lblBieuThuc.Text = "Nháº­p hai sá»‘ vÃ  chá»n phÃ©p tÃ­nh...";
             this.lblBieuThuc.Font = new System.Drawing.Font("Segoe UI", 8.5F, System.Drawing.FontStyle.Italic);
             this.lblBieuThuc.ForeColor = System.Drawing.Color.FromArgb(80, 80, 80);
 
@@ -114,13 +114,13 @@ namespace Lab04_WinFormsBasic.Forms
             this.pnlBtns.BackColor = System.Drawing.Color.FromArgb(230, 245, 243);
 
             this.btnLamMoi.Size = new System.Drawing.Size(150, 36); this.btnLamMoi.Location = new System.Drawing.Point(30, 9);
-            this.btnLamMoi.Text = "🔄 Làm mới"; this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLamMoi.Text = "ðŸ”„ LÃ m má»›i"; this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnLamMoi.FlatAppearance.BorderSize = 0;
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(245, 124, 0); this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
 
             this.btnThoat.Size = new System.Drawing.Size(150, 36); this.btnThoat.Location = new System.Drawing.Point(190, 9);
-            this.btnThoat.Text = "❌ Thoát"; this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.Text = "âŒ ThoÃ¡t"; this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnThoat.FlatAppearance.BorderSize = 0;
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(97, 97, 97); this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -141,7 +141,7 @@ namespace Lab04_WinFormsBasic.Forms
             this.MaximizeBox = false;
             this.Name = "frmMayTinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bài 6: Máy Tính 4 Phép Toán";
+            this.Text = "BÃ i 6: MÃ¡y TÃ­nh 4 PhÃ©p ToÃ¡n";
 
             this.btnCong.Click += new System.EventHandler(this.btnCong_Click);
             this.btnTru.Click += new System.EventHandler(this.btnTru_Click);

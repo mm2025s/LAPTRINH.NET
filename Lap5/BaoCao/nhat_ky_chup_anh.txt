@@ -1,0 +1,22 @@
+﻿===== T? D?NG CH?P ?NH BAO CAO - LAB 5 =====
+Th?i di?m     : 26/10/2026 19:40:55
+Thu m?c ?nh   : d:\LAPTRINH.NET\Lap5\BaoCao
+Màn hình      : 1080x1920
+Ch? d? ch?p   : DrawToBitmap (không có màn hình hi?n th?)
+
+[trace] bat dau Chup01_Main
+[trace] bat dau Chup02_Bai1_ErrorProvider
+[trace] bat dau Chup03_Bai1_HopLe
+[trace] bat dau Chup04_Bai2_KeyPress
+[trace] bat dau Chup05_Bai3_XemTruoc
+[trace] bat dau Chup06_Bai4_ChiTiet
+[trace] bat dau Chup07_Bai5_DanhSach
+[trace] bat dau Chup08_Bai6_DangNhap
+[trace] bat dau Chup09_Bai6_Khoa30Giay
+[trace] bat dau Chup10_Bai7_TimKiem
+[trace] bat dau Chup11_Bai8_ChonKhoa
+[trace] bat dau Chup12_Bai9_XacNhanThoat
+[trace] bat dau Chup13_Bai10_HamDungChung
+[trace] bat dau Chup14_GioiThieu
+
+===== HOAN T?T =====

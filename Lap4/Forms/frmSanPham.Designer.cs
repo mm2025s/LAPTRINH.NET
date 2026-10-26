@@ -1,4 +1,4 @@
-namespace Lab04_WinFormsBasic.Forms
+﻿namespace Lab04_WinFormsBasic.Forms
 {
     partial class frmSanPham
     {
@@ -38,11 +38,11 @@ namespace Lab04_WinFormsBasic.Forms
             this.lblHeader.BackColor = System.Drawing.Color.FromArgb(27, 94, 32);
             this.lblHeader.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblHeader.ForeColor = System.Drawing.Color.White; this.lblHeader.Height = 50;
-            this.lblHeader.Text = "📦 Bài 10: Phiếu Nhập Sản Phẩm"; this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHeader.Text = "ðŸ“¦ BÃ i 10: Phiáº¿u Nháº­p Sáº£n Pháº©m"; this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
             // grpThongTin
             this.grpThongTin.Location = new System.Drawing.Point(12, 62); this.grpThongTin.Size = new System.Drawing.Size(400, 350);
-            this.grpThongTin.Text = "Thông tin sản phẩm"; this.grpThongTin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.grpThongTin.Text = "ThÃ´ng tin sáº£n pháº©m"; this.grpThongTin.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.grpThongTin.ForeColor = System.Drawing.Color.FromArgb(27, 94, 32);
 
             System.Action<System.Windows.Forms.Label, System.Windows.Forms.Control, string, int> addRow =
@@ -55,36 +55,36 @@ namespace Lab04_WinFormsBasic.Forms
                     else if (ctrl is System.Windows.Forms.DateTimePicker dtp) dtp.Font = new System.Drawing.Font("Segoe UI", 9F);
                 };
 
-            addRow(this.lblMaSP, this.txtMaSP, "Mã SP (*):", 25); this.txtMaSP.PlaceholderText = "VD: SP001";
-            addRow(this.lblTenSP, this.txtTenSP, "Tên SP (*):", 58); this.txtTenSP.PlaceholderText = "VD: Laptop Dell XPS 15";
-            addRow(this.lblLoai, this.cboLoai, "Loại SP:", 91);
+            addRow(this.lblMaSP, this.txtMaSP, "MÃ£ SP (*):", 25); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtMaSP, "VD: SP001");
+            addRow(this.lblTenSP, this.txtTenSP, "TÃªn SP (*):", 58); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtTenSP, "VD: Laptop Dell XPS 15");
+            addRow(this.lblLoai, this.cboLoai, "Loáº¡i SP:", 91);
 
-            // Số lượng (short)
-            this.lblSoLuong.Location = new System.Drawing.Point(10, 128); this.lblSoLuong.Size = new System.Drawing.Size(90, 23); this.lblSoLuong.Text = "Số lượng (*):"; this.lblSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblSoLuong.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            // Sá»‘ lÆ°á»£ng (short)
+            this.lblSoLuong.Location = new System.Drawing.Point(10, 128); this.lblSoLuong.Size = new System.Drawing.Size(90, 23); this.lblSoLuong.Text = "Sá»‘ lÆ°á»£ng (*):"; this.lblSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblSoLuong.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
             this.txtSoLuong.Location = new System.Drawing.Point(110, 125); this.txtSoLuong.Size = new System.Drawing.Size(100, 23); this.txtSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtSoLuong.Text = "1";
 
-            // Đơn giá
-            this.lblDonGia.Location = new System.Drawing.Point(10, 162); this.lblDonGia.Size = new System.Drawing.Size(90, 23); this.lblDonGia.Text = "Đơn giá (*):"; this.lblDonGia.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblDonGia.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
-            this.txtDonGia.Location = new System.Drawing.Point(110, 159); this.txtDonGia.Size = new System.Drawing.Size(200, 23); this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtDonGia.PlaceholderText = "VD: 25000000";
-            this.lblDVDonGia.Location = new System.Drawing.Point(318, 162); this.lblDVDonGia.Size = new System.Drawing.Size(60, 23); this.lblDVDonGia.Text = "VNĐ"; this.lblDVDonGia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold); this.lblDVDonGia.ForeColor = System.Drawing.Color.Gray;
+            // ÄÆ¡n giÃ¡
+            this.lblDonGia.Location = new System.Drawing.Point(10, 162); this.lblDonGia.Size = new System.Drawing.Size(90, 23); this.lblDonGia.Text = "ÄÆ¡n giÃ¡ (*):"; this.lblDonGia.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblDonGia.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            this.txtDonGia.Location = new System.Drawing.Point(110, 159); this.txtDonGia.Size = new System.Drawing.Size(200, 23); this.txtDonGia.Font = new System.Drawing.Font("Segoe UI", 9F); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtDonGia, "VD: 25000000");
+            this.lblDVDonGia.Location = new System.Drawing.Point(318, 162); this.lblDVDonGia.Size = new System.Drawing.Size(60, 23); this.lblDVDonGia.Text = "VNÄ"; this.lblDVDonGia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold); this.lblDVDonGia.ForeColor = System.Drawing.Color.Gray;
 
-            // Thành tiền (readonly)
-            this.lblThanhTien.Location = new System.Drawing.Point(10, 196); this.lblThanhTien.Size = new System.Drawing.Size(90, 23); this.lblThanhTien.Text = "Thành tiền:"; this.lblThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblThanhTien.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            // ThÃ nh tiá»n (readonly)
+            this.lblThanhTien.Location = new System.Drawing.Point(10, 196); this.lblThanhTien.Size = new System.Drawing.Size(90, 23); this.lblThanhTien.Text = "ThÃ nh tiá»n:"; this.lblThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblThanhTien.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
             this.txtThanhTien.Location = new System.Drawing.Point(110, 193); this.txtThanhTien.Size = new System.Drawing.Size(200, 26);
             this.txtThanhTien.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             this.txtThanhTien.ReadOnly = true; this.txtThanhTien.Text = "0";
             this.txtThanhTien.BackColor = System.Drawing.Color.FromArgb(232, 245, 233); this.txtThanhTien.ForeColor = System.Drawing.Color.FromArgb(27, 94, 32);
-            this.lblDVThanhTien.Location = new System.Drawing.Point(318, 196); this.lblDVThanhTien.Size = new System.Drawing.Size(60, 23); this.lblDVThanhTien.Text = "VNĐ"; this.lblDVThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold); this.lblDVThanhTien.ForeColor = System.Drawing.Color.FromArgb(27,94,32);
+            this.lblDVThanhTien.Location = new System.Drawing.Point(318, 196); this.lblDVThanhTien.Size = new System.Drawing.Size(60, 23); this.lblDVThanhTien.Text = "VNÄ"; this.lblDVThanhTien.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold); this.lblDVThanhTien.ForeColor = System.Drawing.Color.FromArgb(27,94,32);
 
-            // Ngày nhập
-            this.lblNgayNhap.Location = new System.Drawing.Point(10, 232); this.lblNgayNhap.Size = new System.Drawing.Size(90, 23); this.lblNgayNhap.Text = "Ngày nhập:"; this.lblNgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblNgayNhap.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            // NgÃ y nháº­p
+            this.lblNgayNhap.Location = new System.Drawing.Point(10, 232); this.lblNgayNhap.Size = new System.Drawing.Size(90, 23); this.lblNgayNhap.Text = "NgÃ y nháº­p:"; this.lblNgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblNgayNhap.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
             this.dtpNgayNhap.Location = new System.Drawing.Point(110, 229); this.dtpNgayNhap.Size = new System.Drawing.Size(180, 23); this.dtpNgayNhap.Format = System.Windows.Forms.DateTimePickerFormat.Short; this.dtpNgayNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
 
-            // Mô tả
-            this.lblMoTa.Location = new System.Drawing.Point(10, 266); this.lblMoTa.Size = new System.Drawing.Size(90, 23); this.lblMoTa.Text = "Mô tả:"; this.lblMoTa.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblMoTa.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
+            // MÃ´ táº£
+            this.lblMoTa.Location = new System.Drawing.Point(10, 266); this.lblMoTa.Size = new System.Drawing.Size(90, 23); this.lblMoTa.Text = "MÃ´ táº£:"; this.lblMoTa.Font = new System.Drawing.Font("Segoe UI", 9F); this.lblMoTa.ForeColor = System.Drawing.Color.FromArgb(50,50,50);
             this.txtMoTa.Location = new System.Drawing.Point(110, 263); this.txtMoTa.Size = new System.Drawing.Size(275, 75);
             this.txtMoTa.Multiline = true; this.txtMoTa.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 9F); this.txtMoTa.PlaceholderText = "Mô tả sản phẩm (tùy chọn)...";
+            this.txtMoTa.Font = new System.Drawing.Font("Segoe UI", 9F); Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtMoTa, "MÃ´ táº£ sáº£n pháº©m (tÃ¹y chá»n)...");
 
             this.grpThongTin.Controls.AddRange(new System.Windows.Forms.Control[] {
                 this.lblMaSP, this.txtMaSP, this.lblTenSP, this.txtTenSP,
@@ -95,7 +95,7 @@ namespace Lab04_WinFormsBasic.Forms
 
             // grpAnh
             this.grpAnh.Location = new System.Drawing.Point(424, 62); this.grpAnh.Size = new System.Drawing.Size(200, 350);
-            this.grpAnh.Text = "Ảnh sản phẩm"; this.grpAnh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.grpAnh.Text = "áº¢nh sáº£n pháº©m"; this.grpAnh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.grpAnh.ForeColor = System.Drawing.Color.FromArgb(27, 94, 32);
 
             this.picSanPham.Location = new System.Drawing.Point(10, 25); this.picSanPham.Size = new System.Drawing.Size(180, 220);
@@ -105,10 +105,10 @@ namespace Lab04_WinFormsBasic.Forms
 
             this.txtDuongDanAnh.Location = new System.Drawing.Point(10, 255); this.txtDuongDanAnh.Size = new System.Drawing.Size(180, 23);
             this.txtDuongDanAnh.Font = new System.Drawing.Font("Segoe UI", 8F); this.txtDuongDanAnh.ReadOnly = true;
-            this.txtDuongDanAnh.PlaceholderText = "Chưa chọn ảnh...";
+            Lab04_WinFormsBasic.Helpers.TextBoxExtensions.SetPlaceholderText(this.txtDuongDanAnh, "ChÆ°a chá»n áº£nh...");
 
             this.btnChonAnh.Location = new System.Drawing.Point(10, 285); this.btnChonAnh.Size = new System.Drawing.Size(180, 35);
-            this.btnChonAnh.Text = "📂 Chọn ảnh sản phẩm"; this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnChonAnh.Text = "ðŸ“‚ Chá»n áº£nh sáº£n pháº©m"; this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnChonAnh.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnChonAnh.FlatAppearance.BorderSize = 0;
             this.btnChonAnh.BackColor = System.Drawing.Color.FromArgb(27, 94, 32); this.btnChonAnh.ForeColor = System.Drawing.Color.White;
             this.btnChonAnh.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -120,19 +120,19 @@ namespace Lab04_WinFormsBasic.Forms
             this.pnlBtns.BackColor = System.Drawing.Color.FromArgb(225, 245, 225);
 
             this.btnLuu.Size = new System.Drawing.Size(150, 36); this.btnLuu.Location = new System.Drawing.Point(80, 9);
-            this.btnLuu.Text = "💾 Lưu phiếu nhập"; this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLuu.Text = "ðŸ’¾ LÆ°u phiáº¿u nháº­p"; this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnLuu.FlatAppearance.BorderSize = 0;
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(27, 94, 32); this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.Cursor = System.Windows.Forms.Cursors.Hand;
 
             this.btnLamMoi.Size = new System.Drawing.Size(120, 36); this.btnLamMoi.Location = new System.Drawing.Point(245, 9);
-            this.btnLamMoi.Text = "🔄 Làm mới"; this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnLamMoi.Text = "ðŸ”„ LÃ m má»›i"; this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnLamMoi.FlatAppearance.BorderSize = 0;
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(245, 124, 0); this.btnLamMoi.ForeColor = System.Drawing.Color.White;
             this.btnLamMoi.Cursor = System.Windows.Forms.Cursors.Hand;
 
             this.btnDong.Size = new System.Drawing.Size(100, 36); this.btnDong.Location = new System.Drawing.Point(380, 9);
-            this.btnDong.Text = "❌ Đóng"; this.btnDong.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btnDong.Text = "âŒ ÄÃ³ng"; this.btnDong.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat; this.btnDong.FlatAppearance.BorderSize = 0;
             this.btnDong.BackColor = System.Drawing.Color.FromArgb(97, 97, 97); this.btnDong.ForeColor = System.Drawing.Color.White;
             this.btnDong.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -153,7 +153,7 @@ namespace Lab04_WinFormsBasic.Forms
             this.MaximizeBox = false;
             this.Name = "frmSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Bài 10: Phiếu Nhập Sản Phẩm";
+            this.Text = "BÃ i 10: Phiáº¿u Nháº­p Sáº£n Pháº©m";
             this.CancelButton = this.btnDong;
 
             this.Load += new System.EventHandler(this.frmSanPham_Load);
