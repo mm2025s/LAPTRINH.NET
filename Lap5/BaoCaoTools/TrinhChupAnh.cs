@@ -130,16 +130,7 @@ namespace Lab05_MultiForm.BaoCaoTools
                 GhiLog("LỖI KHI CHỤP: " + ex);
             }
 
-            try
-            {
-                using (var marker = new Bitmap(1, 1))
-                {
-                    marker.Save(Path.Combine(_thuMucAnh, "chup_anh.chay"), ImageFormat.Bmp);
-                }
-            }
-            catch (Exception)
-            {
-            }
+            // (Không còn file đánh dấu: nhật ký .txt là dấu hiệu tiến trình đã chạy xong)
 
             try
             {
@@ -190,6 +181,7 @@ namespace Lab05_MultiForm.BaoCaoTools
                 }
                 finally
                 {
+                    try { File.Delete(Path.Combine(_thuMucAnh, "chup_anh.chay")); } catch (Exception) { }
                     LuuNhatKy();
                     Environment.Exit(0);
                 }
@@ -363,7 +355,7 @@ namespace Lab05_MultiForm.BaoCaoTools
             HienForm(moPhong, null);
             GhiLog("[Bài 9] frmMain_FormClosing: chọn Yes ⇒ ứng dụng thoát; chọn No ⇒ e.Cancel = true (không thoát)");
 
-            Chup("Bai05_12_Bai05_09_XacNhanThoat", moPhong, true);
+            Chup("Bai05_12_Bai9_XacNhanThoat", moPhong, true);
         }
 
         private const string HoiThoat =
@@ -438,7 +430,7 @@ namespace Lab05_MultiForm.BaoCaoTools
             Bam(f, "btnKiemTra");
             GhiLog("[Bài 10] Bảng kiểm tra dùng chung: mã, họ tên, điểm, ngày sinh, khoa");
 
-            Chup("Bai05_12_Bai10_HamDungChung", f, true);
+            Chup("Bai05_13_Bai10_HamDungChung", f, true);
         }
 
         private static void Chup14_GioiThieu()
@@ -447,7 +439,7 @@ namespace Lab05_MultiForm.BaoCaoTools
             HienForm(f, null);
             GhiLog("[Trợ giúp] frmGioiThieu: mục tiêu, bản đồ kỹ thuật, phím tắt, kiến trúc");
 
-            Chup("Bai05_13_TrGioiThieu", f, true);
+            Chup("Bai05_14_GioiThieu", f, true);
         }
 
         // =====================================================================

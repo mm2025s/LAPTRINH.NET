@@ -1,5 +1,5 @@
 ﻿===== T? D?NG CH?P ?NH BAO CAO - LAB 5 =====
-Th?i di?m     : 26/10/2026 19:40:55
+Th?i di?m     : 26/10/2026 19:43:35
 Thu m?c ?nh   : d:\LAPTRINH.NET\Lap5\BaoCao
 Màn hình      : 1080x1920
 Ch? d? ch?p   : DrawToBitmap (không có màn hình hi?n th?)
