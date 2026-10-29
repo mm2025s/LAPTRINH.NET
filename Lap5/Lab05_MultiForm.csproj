@@ -104,6 +104,7 @@
     <Compile Include="Forms\frmKiemTraDuLieu.Designer.cs">
       <DependentUpon>frmKiemTraDuLieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CheDoChupAnh.cs" />
     <Compile Include="BaoCaoTools\TrinhChupAnh.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>

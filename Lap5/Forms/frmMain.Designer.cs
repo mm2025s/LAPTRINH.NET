@@ -1,8 +1,9 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using Lab05_MultiForm.Helpers;
+using Lab05_MultiForm.Models;
 
 namespace Lab05_MultiForm.Forms
 {

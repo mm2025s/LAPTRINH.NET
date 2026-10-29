@@ -1,4 +1,5 @@
 ﻿BaoCaoTools/TrinhChupAnh.cs
+Forms/CheDoChupAnh.cs
 Forms/frmChiTietSinhVien.cs
 Forms/frmChiTietSinhVien.Designer.cs
 Forms/frmChonKhoa.cs

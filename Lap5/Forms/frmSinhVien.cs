@@ -21,7 +21,6 @@ namespace Lab05_MultiForm.Forms
     public partial class frmSinhVien : FormBase
     {
         private const string TrangThaiDiemHopLe = "Diem hop le";
-        private string _trangThaiXemTruoc = "Chua nhap du lieu";
 
         // ---------------------------------------------------------------
         // Sự kiện public: Form cha / frmDanhSach đăng ký để biết khi có dữ liệu mới.

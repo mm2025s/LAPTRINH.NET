@@ -1,0 +1,9 @@
+﻿===== TU DONG CHUP ANH BAO CAO - LAB 7 =====
+Thoi diem    : 29/10/2026 13:02:21
+Thu muc anh  : d:\LAPTRINH.NET\Lap7\BaoCao
+Chan doan CSDL: Ket noi duoc, SinhVien co 12 ban ghi.
+
+Che do chup  : DrawToBitmap (khong co man hinh)
+
+
+===== HOAN TAT =====

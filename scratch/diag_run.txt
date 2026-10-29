@@ -1,20 +1,47 @@
-﻿=== BAT DAU 19:21:26 ===
-TIMEOUT - kill
+﻿=== BAT DAU 19:43:35 ===
+THOAT: code=0
 --- STDOUT ---
 [BaoCao] ===== T? D?NG CH?P ?NH BAO CAO - LAB 5 =====
-[BaoCao] Th?i di?m     : 26/10/2026 19:21:26
+[BaoCao] Th?i di?m     : 26/10/2026 19:43:35
 [BaoCao] Thu m?c ?nh   : d:\LAPTRINH.NET\Lap5\BaoCao
 [BaoCao] Mαn h∞nh      : 1080x1920
 [BaoCao] Ch? d? ch?p   : DrawToBitmap (kh⌠ng c≤ mαn h∞nh hi?n th?)
 [BaoCao] 
-[frmMain] load: bat dau
-[frmMain] co mdiClient
-[frmMain] dashboard parent ok
-[frmMain] dashboard tinh xong
-[frmMain] ?ng d?ng kh?i d?ng - chαo m?ng b?n d?n v?i Lab 5!
+[BaoCao] [trace] bat dau Chup01_Main
+[BaoCao] [trace] bat dau Chup02_Bai1_ErrorProvider
+[BaoCao] [trace] bat dau Chup03_Bai1_HopLe
+[BaoCao] [trace] bat dau Chup04_Bai2_KeyPress
+[BaoCao] [trace] bat dau Chup05_Bai3_XemTruoc
+[BaoCao] [trace] bat dau Chup06_Bai4_ChiTiet
+[BaoCao] [trace] bat dau Chup07_Bai5_DanhSach
+[BaoCao] [trace] bat dau Chup08_Bai6_DangNhap
+[BaoCao] [trace] bat dau Chup09_Bai6_Khoa30Giay
+[BaoCao] [trace] bat dau Chup10_Bai7_TimKiem
+[BaoCao] [trace] bat dau Chup11_Bai8_ChonKhoa
+[BaoCao] [trace] bat dau Chup12_Bai9_XacNhanThoat
+[BaoCao] [trace] bat dau Chup13_Bai10_HamDungChung
+[BaoCao] [trace] bat dau Chup14_GioiThieu
+[BaoCao] 
+[BaoCao] ===== HOAN T?T =====
 
 --- STDERR ---
 
-=== KET THUC 19:22:56 ===
-  Bai05_01_frmMain.png  44087  19:16:08
-  nhat_ky_chup_anh.txt  160  19:21:26
+=== KET THUC 19:43:48 ===
+  Bai05_01_frmMain.png  44920  19:43:36
+  Bai05_02_Bai1_ErrorProvider.png  56813  19:43:37
+  Bai05_03_Bai1_HopLe.png  57556  19:43:38
+  Bai05_04_Bai2_KeyPress.png  57653  19:43:39
+  Bai05_05_Bai3_XemTruoc.png  57691  19:43:40
+  Bai05_06_Bai4_ChiTiet.png  33896  19:43:40
+  Bai05_07_Bai5_DanhSach.png  47791  19:43:41
+  Bai05_08_Bai6_DangNhap.png  26861  19:43:42
+  Bai05_09_Bai6_Khoa30Giay.png  26949  19:43:43
+  Bai05_10_Bai7_TimKiem.png  31064  19:43:44
+  Bai05_11_Bai8_ChonKhoa.png  24174  19:43:45
+  Bai05_12_Bai10_HamDungChung.png  32614  19:43:08
+  Bai05_12_Bai9_XacNhanThoat.png  8742  19:43:46
+  Bai05_13_Bai05_GioiThieu.png  60081  19:36:47
+  Bai05_13_Bai10_HamDungChung.png  32608  19:43:47
+  Bai05_14_GioiThieu.png  60052  19:43:48
+  chup_anh.chay  58  19:41:07
+  nhat_ky_chup_anh.txt  779  19:43:48

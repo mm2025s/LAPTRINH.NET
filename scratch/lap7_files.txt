@@ -1,0 +1,15 @@
+﻿BaoCaoTools/TrinhChupAnh.cs
+BUS/NghiepVu.cs
+DAL/DbConnectionFactory.cs
+DAL/TruyVanDAL.cs
+DTO/DoiTuong.cs
+GUI/frmKetNoi.cs
+GUI/frmMain.cs
+GUI/frmSoDoQuanHe.cs
+GUI/frmTrangThai.cs
+GUI/frmTruyVan.cs
+GUI/Helpers/DinhDang.cs
+GUI/Helpers/FormBase.cs
+GUI/Helpers/UiControls.cs
+GUI/Helpers/UiTheme.cs
+Program.cs

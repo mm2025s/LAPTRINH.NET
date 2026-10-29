@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,7 +19,7 @@ namespace Lab05_MultiForm.Forms
         private Label lblLeftGhiChu;
 
         private Label lblMathieuDe1, lblMoTa1, lblMathieuDe2, lblMoTa2;
-        private Label lblMathieuDe3, lblMoTa3, lblMathieuDe4, lblMoTa4;
+        private Label lblMathieuDe3, lblMathieuDe4, lblMoTa4;
         private Label lblNhanMa, lblNhanTen, lblNhanGioiTinh, lblNhanKhoa, lblNhanNgay, lblNhanDiem, lblNhanSoThich;
         private TextBox txtMaSV, txtHoTen, txtDiemTB, txtDuongDanAnh;
         private DateTimePicker dtpNgaySinh;

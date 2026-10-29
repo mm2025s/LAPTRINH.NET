@@ -31,7 +31,6 @@ namespace Lab05_MultiForm.BaoCaoTools
         private static readonly StringBuilder NhatKy = new StringBuilder();
         private static string _thuMucAnh;
         private static bool _coManHinh;
-        private static SynchronizationContext _nguCanh;
 
         public static void Chay()
         {
