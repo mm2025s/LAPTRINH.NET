@@ -1,0 +1,39 @@
+﻿
+========== KIEM TRA NHANH - LAB 8 ==========
+[ĐẠT]     Bài 1 - ExecuteScalar COUNT(*)
+           → SinhVien = 22 bản ghi
+[ĐẠT]     Bài 2 - ExecuteReader danh sách
+           → 22 dòng; dòng đầu: SV008  -  Bùi Lan Anh  -  8,20
+[ĐẠT]     Bài 3 - ExecuteNonQuery INSERT (Email = DBNull)
+           → 1 dòng; tổng sau khi thêm = 23
+[ĐẠT]     Bài 3b - Thêm trùng mã phải báo lỗi
+           → Đã chặn: Dữ liệu bị trùng khóa (mã sinh viên hoặc email đã tồn tại). Mã "SV900" có thể đã được dùng, hãy chọn mã khác.
+[ĐẠT]     Bài 4 - ExecuteNonQuery UPDATE điểm
+           → 1 dòng; 8,20 → 9,99 → đã trả lại 8,20
+[ĐẠT]     Bài 4b - Cập nhật mã không tồn tại (rows = 0)
+           → 0 dòng → "Không tìm thấy mã sinh viên "SV999"."
+[ĐẠT]     Bài 4c - Chặn SQL Injection (chuỗi chỉ là dữ liệu)
+           → An toàn: tham số hóa, cập nhật 0 dòng (không mã nào khớp), số sinh viên 23 → 23
+[ĐẠT]     Bài 5 - sp_SinhVien_TheoKhoa (StoredProcedure)
+           → 10 sinh viên khoa CNTT
+[ĐẠT]     Bài 6 - Tìm theo mã
+           → SV017 · Lâm Thu Trang · Công nghệ thông tin
+[ĐẠT]     Bài 6b - Tìm mã không tồn tại
+           → null → hiển thị "Không tìm thấy"
+[ĐẠT]     Bài 7 - ExecuteScalar MAX(DiemTB) xử lý NULL
+           → CNTT = 9,55; [OTO: 8,15, 7 SV] [CNTT: 9,55, 10 SV] [KT: 9,10, 6 SV]
+[ĐẠT]     Bài 8 - Xóa sinh viên còn đăng ký → lỗi 547
+           → Đã chặn đúng (còn 2 đăng ký): Không xóa được: sinh viên "SV005" vẫn còn đăng ký học phần (ràng buộc khóa ngoại FK_DangKy_SV). Hãy xóa các đăng ký trước.
+[ĐẠT]     Bài 8b - Xóa mã không tồn tại → 0 dòng
+           → 0 dòng → "Không tìm thấy mã"
+[ĐẠT]     Bài 9 - StoredProcedure + tham số OUTPUT
+           → @SoLuongHienTai = 24 (trước khi kiểm tra: 22)
+[ĐẠT]     Bài 10 - SqlHelper.ExecuteScalar/Reader/NonQuery
+           → Scalar = 24, Reader = 24 dòng, NonQuery = 1 dòng
+
+========== DON DEP DU LIEU KIEM TRA ==========
+  Xóa SV900: 1 dòng
+  Xóa SV901: 1 dòng
+Số bản ghi trước kiểm tra = 22, sau khi dọn = 22  ✔ khớp
+
+========== KET QUA: 15 đạt / 0 không đạt ==========

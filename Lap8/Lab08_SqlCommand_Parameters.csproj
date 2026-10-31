@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B2C3D4E5-F6A7-4B8C-9D0E-1F2A3B4C5D6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Lab08_SqlCommand_Parameters</RootNamespace>
+    <AssemblyName>Lab08_SqlCommand_Parameters</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <!-- Dùng System.Data.SqlClient + System.Configuration, không cần NuGet -->
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Tầng DTO -->
+    <Compile Include="DTO\DoiTuong.cs" />
+    <!-- Tầng DAL (ADO.NET: kết nối, SqlCommand, SqlParameter, SqlHelper) -->
+    <Compile Include="DAL\DbConnectionFactory.cs" />
+    <Compile Include="DAL\KhoaDAL.cs" />
+    <Compile Include="DAL\SinhVienDAL.cs" />
+    <Compile Include="DAL\SqlHelper.cs" />
+    <!-- Tầng BUS -->
+    <Compile Include="BUS\SinhVienBUS.cs" />
+    <!-- Tầng GUI + helper -->
+    <Compile Include="GUI\Helpers\DinhDang.cs" />
+    <Compile Include="GUI\Helpers\FormBase.cs" />
+    <Compile Include="GUI\Helpers\UiControls.cs" />
+    <Compile Include="GUI\Helpers\UiTheme.cs" />
+    <Compile Include="GUI\Helpers\BaiFormBase.cs" />
+    <Compile Include="GUI\Helpers\NhapSinhVienPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBai10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoTools\TrinhChupAnh.cs" />
+    <Compile Include="BaoCaoTools\KiemTraChucNang.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="README.txt" />
+    <None Include="SQL\Lab08_StoredProcedures.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

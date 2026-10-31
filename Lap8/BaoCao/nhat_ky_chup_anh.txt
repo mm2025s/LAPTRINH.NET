@@ -1,0 +1,59 @@
+﻿===== TU DONG CHUP ANH BAO CAO - LAB 8 =====
+Thoi diem    : 31/10/2026 13:48:11
+Thu muc anh  : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan CSDL: Ket noi duoc, SinhVien co 22 ban ghi.
+
+Che do chup  : DrawToBitmap (khong co man hinh)
+
+===== KICH BAN Chup01_Main =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_01_frmMain.png (1112x712)
+===== KICH BAN Chup02_Bai1_ExecuteScalar =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_02_Bai1_ExecuteScalar.png (772x512)
+===== KICH BAN Chup03_Bai2_ExecuteReader =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_03_Bai2_ExecuteReader.png (872x612)
+===== KICH BAN Chup04_Bai5_StoredProcedure =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_04_Bai5_StoredProcedure.png (932x652)
+===== KICH BAN Chup05_Bai6_TimTheoMa =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_05_Bai6_TimTheoMa.png (852x612)
+===== KICH BAN Chup06_Bai7_ThongKe =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_06_Bai7_ThongKe.png (932x652)
+===== KICH BAN Chup07_Bai10_SqlHelper =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_07_Bai10_SqlHelper.png (912x692)
+===== KICH BAN Chup08_Bai3_ThemSinhVien =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_08_Bai3_ThemSinhVien.png (912x672)
+===== KICH BAN Chup09_Bai8_XoaSinhVien =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_09_Bai8_XoaSinhVien.png (832x572)
+===== KICH BAN Chup10_Bai9_OutputParameter =====
+Thu muc anh : d:\LAPTRINH.NET\Lap8\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 22 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai08_10_Bai9_OutputParameter.png (912x692)
+
+===== HOAN TAT =====
