@@ -1,0 +1,65 @@
+﻿===== TU DONG CHUP ANH BAO CAO - LAB 9 =====
+Thoi diem    : 31/10/2026 14:20:47
+Thu muc anh  : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan CSDL: Ket noi duoc, SinhVien co 46 ban ghi.
+
+Che do chup  : DrawToBitmap (khong co man hinh)
+
+===== KICH BAN Chup01_Main =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_01_frmMain.png (1132x732)
+===== KICH BAN Chup02_Bai1_DataTable =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_02_Bai1_DataTableLoad.png (1062x752)
+===== KICH BAN Chup03_Bai2_TimKiem =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_03_Bai2_TimKiem.png (1062x752)
+===== KICH BAN Chup04_Bai3_Loc =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_04_Bai3_LocKhoaDiem.png (1062x752)
+===== KICH BAN Chup05_Bai4_PhanTrang =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_05_Bai4_PhanTrang.png (1062x752)
+===== KICH BAN Chup06_Bai5_ChiTiet =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_06_Bai5_ChiTiet.png (1102x752)
+===== KICH BAN Chup07_Bai6_DaTieuChi =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_07_Bai6_DaTieuChi.png (1142x812)
+===== KICH BAN Chup08_Bai7_SapXep =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_08_Bai7_SapXep.png (1102x772)
+===== KICH BAN Chup09_Bai8_Tuoi =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_09_Bai8_LocTuoi.png (1102x772)
+===== KICH BAN Chup10_Bai9_DinhDang =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Da luu: Bai09_10_Bai9_DinhDang.png (1102x772)
+===== KICH BAN Chup11_Bai10_CSV =====
+Thu muc anh : d:\LAPTRINH.NET\Lap9\BaoCao
+Chan doan    : Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup : DrawToBitmap
+Xuat CSV: 46 dong -> d:\LAPTRINH.NET\Lap9\BaoCao_Csv\KetQua_SinhVien.csv
+Da luu: Bai09_11_Bai10_XuatCsv.png (1142x812)
+
+===== HOAN TAT =====

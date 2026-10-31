@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Lab06_ThreeLayer.DTO;
 
 namespace Lab06_ThreeLayer.BUS
 {

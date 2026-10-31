@@ -1,0 +1,85 @@
+﻿===== KIEM TRA NHANH - LAB 9 (SqlDataReader, tim kiem, loc) =====
+Thoi diem : 31/10/2026 14:18:51
+May       : MMO2025
+
+
+--- BAI 1 - Nap SqlDataReader vao DataTable ---
+  [DAT ] DataTable.Load(reader) doc duoc du lieu  (46 dong, 8 cot)
+  [DAT ] Co du 8 cot theo yeu cau  (MaSV, HoTen, NgaySinh, GioiTinh, MaKhoa, TenKhoa, DiemTB, Email)
+  [DAT ] Nap thu cong cho cung so dong  (Load=46, thu cong=46)
+  [DAT ] JOIN Khoa lay duoc TenKhoa (khong NULL)  (3 khoa: CNTT / OTO / KT)
+  [DAT ] CASE GioiTinh tra ve 'Nam' hoac 'Nữ'  (da doi BIT -> chuoi)
+
+--- BAI 2 - Tim kiem gan dung theo ho ten (LIKE @Keyword) ---
+  [DAT ] LIKE 'Nguyễn' khop voi dem o client  (SQL=4, client=4)
+  [DAT ] Tu khoa khong ton tai tra ve 0 dong  (0 dong - khong nem loi)
+  [DAT ] Ky tu % khong bi hieu la wildcard (vao tham so)  (% tra ve 0/46 dong)
+  [DAT ] Chuoi SQL Injection khong lam hong bang  (bang con 46 dong)
+  [DAT ] Tu khoa rong bi tu choi (LoiNghiepVu)  (kiem tra o BUS)
+
+--- BAI 3 - Loc theo khoa va khoang diem ---
+  [DAT ] Bo loc rong = toan bo du lieu  (46 dong)
+  [DAT ] Loc theo khoa CNTT  (18 SV khoa CNTT)
+  [DAT ] Khoang diem 7.00 - 9.00 dung bien  (21 dong)
+  [DAT ] BETWEEN cho cung ket qua voi >= / <=  (BETWEEN=21, >=/<= 21)
+  [DAT ] Khoang diem nguoc bi tu choi  (DiemTu > DiemDen)
+  [DAT ] Diem am bi tu choi  (0 <= diem <= 10)
+
+--- BAI 4 - Phan trang bang OFFSET - FETCH ---
+  [DAT ] Trang 1 co dung 10 dong  (10 dong)
+  [DAT ] Tong so dong dung bang COUNT(*)  (COUNT=46, thuc te=46)
+  [DAT ] Tong so trang = ceiling(tong/10)  (5 trang)
+  [DAT ] Trang 2 khong trung dong nao voi trang 1  (trang1=10, trang2=10, trung=0)
+  [DAT ] Trang 1 khong co trang truoc, co trang sau  (Trang 1/5)
+  [DAT ] Trang cuoi khong co trang sau  (Trang 5/5)
+  [DAT ] Cong don tat ca cac trang = tong so dong  (46 = 46)
+  [DAT ] Sap xep theo DiemTB giam dan dung thu tu  (OFFSET 0 FETCH NEXT 10)
+
+--- BAI 5 - Doc chi tiet dong duoc chon (xu ly DBNull) ---
+  [DAT ] Doc chi tiet theo MaSV  (SV001 - Nguyễn Văn An)
+  [DAT ] Tuoi tinh tu NgaySinh nam trong 15..40  (Tuoi = 21)
+  [DAT ] Email NULL doc ra null (khong nem InvalidCastException)  (SV003 Email = DBNull.Value)
+  [DAT ] MaSV khong ton tai tra ve doi tuong rong  (reader.Read() = false)
+  [DAT ] TinhTuoi: sinh nhat chua toi thi tru 1  (31/12/2000 -> 25 tuoi; hom nay -20 nam -> 20)
+
+--- BAI 6 - Tim kiem da tieu chi ---
+  [DAT ] Tieu chi rong = toan bo du lieu  (46 dong)
+  [DAT ] Loc gioi tinh = Nam  (23 = 23)
+  [DAT ] Ket hop khoa + diem: moi dong deu thoa ca hai  (7 SV CNTT co diem >= 8)
+  [DAT ] Loc theo khoang tuoi tra ve ket qua hop le  (35 SV tuoi 20-22)
+  [DAT ] Ket hop ho ten + gioi tinh  (2 SV nu ho Nguyen)
+  [DAT ] Tieu chi khong khop gi tra ve 0 (khong loi)  (0 dong)
+
+--- BAI 7 - Sap xep theo cot trong whitelist ---
+  [DAT ] Sap xep MaSV tang/giam  (46 dong)
+  [DAT ] Sap xep HoTen tang/giam  (46 dong)
+  [DAT ] Sap xep NgaySinh tang/giam  (46 dong)
+  [DAT ] Sap xep DiemTB tang/giam  (46 dong)
+  [DAT ] Sap xep TenKhoa tang/giam  (46 dong)
+  [DAT ] Ten cot la bi loai bo, quay ve MaSV  (ChuanHoa() -> MaSV)
+  [DAT ] Bang van con nguyen sau khi thu tan cong  (du lieu an toan)
+
+--- BAI 8 - Loc theo tuoi (doi sang khoang NgaySinh) ---
+  [DAT ] Loc tuoi 20-22 khop voi tinh o client  (SQL=35, client=35)
+  [DAT ] Nguoi sinh dung hom nay -20 nam co tuoi = 20  (NgaySinh = 31/10/2006 -> 20)
+  [DAT ] Nguoi con 1 ngay nua moi tron 20 tuoi co tuoi = 19  (NgaySinh = 01/11/2006 -> 19)
+  [DAT ] Chi nhap tuoi to (25+)  (1 SV)
+  [DAT ] Khoang tuoi nguoc bi tu choi  (TuoiTu > TuoiDen)
+
+--- BAI 9 - Dinh dang DataGridView + to mau theo diem ---
+  [DAT ] Co du ca hai nhom mau (do va xanh)  (duoi 5: 5 SV, tu 8: 19 SV)
+  [DAT ] Dinh dang ngay la dd/MM/yyyy  (15/02/2005)
+  [DAT ] Dinh dang diem co 2 chu so thap phan  (8.20)
+  [DAT ] Diem nam trong 0..10 (rang buoc CHECK)  (du lieu hop le)
+
+--- BAI 10 - Xuat CSV UTF-8 co BOM ---
+  [DAT ] Ghi du so dong  (46 = 46)
+  [DAT ] Tep co BOM UTF-8 (EF BB BF)  (Excel doc dung tieng Viet)
+  [DAT ] Dong tieu de co cot tieng Viet  (Mã SV,Họ tên,Ngày sinh,Giới tính,Tên khoa,Điểm TB,Email)
+  [DAT ] Doc lai giu nguyen dau tieng Viet  (khong bi mojibake)
+  [DAT ] Gia tri co dau phay/nhay duoc boc trong "..."  (RFC 4180)
+  [DAT ] Xuat khong lam thay doi du lieu goc  (46 dong)
+
+------------------------------------------------------------
+KET QUA: 57/57 phep kiem tra dat.
+------------------------------------------------------------
