@@ -1,0 +1,51 @@
+﻿===== TU DONG CHUP ANH BAO CAO - LAB 10 =====
+Thoi diem    : 31/10/2026 14:38:11
+Thu muc anh  : D:\LAPTRINH.NET\Lap10\BaoCao
+Chan doan CSDL: Ket noi duoc, SinhVien co 46 ban ghi.
+Che do chup  : CopyFromScreen
+
+===== KICH BAN Chup01_Main =====
+Mo ta: Cua so chinh MDI
+  -> Chup01_Main: Bai10_01_frmMain.png (996 ms)
+Da luu: Bai10_01_frmMain.png (14370 byte)
+===== KICH BAN Chup02_Bai1 =====
+Mo ta: Bai 1 - Fill DataTable
+  -> Chup02_Bai1: Bai10_02_Bai1_FillDataTable.png (968 ms)
+Da luu: Bai10_02_Bai1_FillDataTable.png (52806 byte)
+===== KICH BAN Chup03_Bai2 =====
+Mo ta: Bai 2 - DataSet nhieu bang
+  -> Chup03_Bai2: Bai10_03_Bai2_DataSet.png (960 ms)
+Da luu: Bai10_03_Bai2_DataSet.png (42758 byte)
+===== KICH BAN Chup04_Bai3 =====
+Mo ta: Bai 3 - DataRelation
+  -> Chup04_Bai3: Bai10_04_Bai3_DataRelation.png (987 ms)
+Da luu: Bai10_04_Bai3_DataRelation.png (53280 byte)
+===== KICH BAN Chup05_Bai4 =====
+Mo ta: Bai 4 - DataView loc/sap xep
+  -> Chup05_Bai4: Bai10_05_Bai4_DataView.png (976 ms)
+Da luu: Bai10_05_Bai4_DataView.png (52738 byte)
+===== KICH BAN Chup06_Bai5 =====
+Mo ta: Bai 5 - SqlCommandBuilder
+  -> Chup06_Bai5: Bai10_06_Bai5_CapNhat.png (953 ms)
+Da luu: Bai10_06_Bai5_CapNhat.png (53397 byte)
+===== KICH BAN Chup07_Bai6 =====
+Mo ta: Bai 6 - DataTable thu cong
+  -> Chup07_Bai6: Bai10_07_Bai6_DataTableThuCong.png (972 ms)
+Da luu: Bai10_07_Bai6_DataTableThuCong.png (33569 byte)
+===== KICH BAN Chup08_Bai7 =====
+Mo ta: Bai 7 - Theo doi RowState
+  -> Chup08_Bai7: Bai10_08_Bai7_RowState.png (996 ms)
+Da luu: Bai10_08_Bai7_RowState.png (52204 byte)
+===== KICH BAN Chup09_Bai8 =====
+Mo ta: Bai 8 - Accept/RejectChanges
+  -> Chup09_Bai8: Bai10_09_Bai8_AcceptReject.png (966 ms)
+Da luu: Bai10_09_Bai8_AcceptReject.png (69566 byte)
+===== KICH BAN Chup10_Bai9 =====
+Mo ta: Bai 9 - DataSet XML
+  -> Chup10_Bai9: Bai10_10_Bai9_Xml.png (971 ms)
+Da luu: Bai10_10_Bai9_Xml.png (38323 byte)
+===== KICH BAN Chup11_Bai10 =====
+Mo ta: Bai 10 - Merge
+  -> Chup11_Bai10: Bai10_11_Bai10_Merge.png (977 ms)
+Da luu: Bai10_11_Bai10_Merge.png (50065 byte)
+===== HOAN TAT: 11 anh =====

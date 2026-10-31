@@ -1,0 +1,208 @@
+﻿
+======================================================================
+LAB 10 - KIEM TRA CHUC NANG (mo hinh ngat ket noi)
+======================================================================
+Thoi diem: 31/10/2026 14:35:34
+
+
+--- BAI 1 - Fill DataTable bang SqlDataAdapter ---
+  [DAT] Nạp được dữ liệu từ CSDL
+        → Số dòng = 46
+  [DAT] Tên bảng là "SinhVien"
+        → TableName = SinhVien
+  [DAT] Có 7 cột
+        → Columns = 7
+  [DAT] Cột DiemTB giữ kiểu decimal
+        → Kiểu = Decimal
+  [DAT] Mọi dòng sau Fill đều Unchanged
+        → Không đổi 46 · Thêm 0 · Sửa 0 · Xóa 0 → 0 thay đổi sẽ gửi
+  [DAT] Cột NgaySinh giữ kiểu DateTime
+        → Kiểu = DateTime
+  [DAT] Email NULL đọc thành DBNull
+        → Có ít nhất một dòng Email = DBNull
+
+--- BAI 2 - DataSet chua nhieu bang ---
+  [DAT] DataSet có 2 bảng
+        → Tables = 2
+  [DAT] Truy cập được theo TÊN "Khoa"
+        → ds.Tables["Khoa"]
+  [DAT] Truy cập được theo TÊN "SinhVien"
+        → ds.Tables["SinhVien"]
+  [DAT] DataSetName = "QLSinhVien"
+        → Name = QLSinhVien
+  [DAT] Bảng Khoa có 3 dòng
+        → Rows = 3
+  [DAT] Hai bảng độc lập trong cùng DataSet
+        → 46 -> 46
+
+--- BAI 3 - DataRelation Khoa - SinhVien ---
+  [DAT] Dữ liệu toàn vẹn khóa ngoại
+        → Không có MaKhoa mồ côi
+  [DAT] Tạo được DataRelation
+        → FK_Khoa_SinhVien
+  [DAT] Tên quan hệ = FK_Khoa_SinhVien
+        → FK_Khoa_SinhVien
+  [DAT] Bảng cha là Khoa
+        → Khoa
+  [DAT] Bảng con là SinhVien
+        → SinhVien
+  [DAT] GetChildRows("CNTT") khớp đếm thủ công
+        → 18 = 18
+  [DAT] GetChildRows("KT") khớp đếm thủ công
+        → 14 = 14
+  [DAT] GetChildRows("OTO") khớp đếm thủ công
+        → 14 = 14
+  [DAT] Tổng số dòng con = tổng số sinh viên
+        → 46 = 46
+  [DAT] ForeignKeyConstraint chặn xóa khoa còn sinh viên
+        → Đã chặn bằng InvalidConstraintException
+
+--- BAI 4 - Loc va sap xep bang DataView ---
+  [DAT] Không lọc → đủ số dòng
+        → 46 = 46
+  [DAT] Lọc MaKhoa = CNTT khớp đếm thủ công
+        → 18 = 18
+  [DAT] Lọc DiemTB >= 8 khớp đếm thủ công
+        → 19 = 19
+  [DAT] Lọc kết hợp khoa + điểm
+        → 11 = 11
+  [DAT] Sort = DiemTB DESC đúng thứ tự
+        → Giảm dần
+  [DAT] EscapeRowFilter nhân đôi dấu nháy đơn
+        → O''Neil
+  [DAT] RowFilter với dấu nháy đơn không ném lỗi
+        → Kết quả = 0 dòng
+  [DAT] DataView cập nhật ngay khi DataTable đổi (không cần truy vấn lại)
+        → 18 -> 19
+
+--- BAI 5 - Cap nhat bang SqlCommandBuilder ---
+  [DAT] Fill được bảng để sửa
+        → Rows = 46
+  [DAT] CommandBuilder sinh InsertCommand
+        → có
+  [DAT] CommandBuilder sinh UpdateCommand
+        → có
+  [DAT] CommandBuilder sinh DeleteCommand
+        → có
+  [DAT] Sau Fill mọi dòng Unchanged
+        → Không đổi 46 · Thêm 0 · Sửa 0 · Xóa 0 → 0 thay đổi sẽ gửi
+  [DAT] Update khi không có thay đổi → 0 dòng
+        → Không có thay đổi nào cần gửi (mọi dòng đang Unchanged).
+  [DAT] Sửa dòng → RowState = Modified
+        → Modified
+  [DAT] RejectChanges đưa dòng về Unchanged
+        → Unchanged
+  [DAT] Không ghi gì xuống CSDL trong bộ kiểm tra này
+        → An toàn: dữ liệu CSDL không bị thay đổi
+
+--- BAI 6 - Tao DataTable thu cong ---
+  [DAT] Tạo được bảng trong bộ nhớ
+        → Rows = 5
+  [DAT] Có 4 cột
+        → Columns = 4
+  [DAT] Có PrimaryKey = MaSV
+        → MaSV
+  [DAT] Cột XepLoai là cột TÍNH (có Expression)
+        → IIF(Diem >= 8, 'Giỏi', IIF(Diem >= 6.5, 'Khá', IIF(Diem >= 5, 'Trung bình', 'Yếu')))
+  [DAT] XepLoai tính đúng cho điểm 9.1
+        → Giỏi
+  [DAT] XepLoai tính đúng cho điểm 4.2
+        → Yếu
+  [DAT] Sửa Điểm → XepLoai tự cập nhật
+        → Điểm 5.0 → Trung bình
+  [DAT] Constraint chặn điểm > 10
+        → Đã chặn
+  [DAT] Constraint chặn điểm < 0
+        → Đã chặn
+  [DAT] PrimaryKey chặn trùng MaSV
+        → Đã chặn
+  [DAT] Có ít nhất 1 ràng buộc khai báo
+        → Constraints = 1
+
+--- BAI 7 - Theo doi RowState ---
+  [DAT] Sau Fill: tất cả Unchanged
+        → Không đổi 46 · Thêm 0 · Sửa 0 · Xóa 0 → 0 thay đổi sẽ gửi
+  [DAT] GetChanges() = null khi chưa đổi gì
+        → null
+  [DAT] Sau khi sửa: Modified = 1
+        → Không đổi 45 · Thêm 0 · Sửa 1 · Xóa 0 → 1 thay đổi sẽ gửi
+  [DAT] Sau khi thêm: Added = 1
+        → Không đổi 45 · Thêm 1 · Sửa 1 · Xóa 0 → 2 thay đổi sẽ gửi
+  [DAT] Sau khi xóa: Deleted = 1
+        → Không đổi 44 · Thêm 1 · Sửa 1 · Xóa 1 → 3 thay đổi sẽ gửi
+  [DAT] Tổng thay đổi = 3
+        → Không đổi 44 · Thêm 1 · Sửa 1 · Xóa 1 → 3 thay đổi sẽ gửi
+  [DAT] GetChanges() chỉ trả về 3 dòng đã đổi
+        → 3 dòng
+  [DAT] Dòng Deleted vẫn nằm trong bảng gốc
+        → Rows = 47 (gốc 46 + 1 thêm)
+  [DAT] Đọc cột của dòng Deleted ném DeletedRowInaccessibleException
+        → Đã ném đúng ngoại lệ
+
+--- BAI 8 - AcceptChanges va RejectChanges ---
+  [DAT] Trước AcceptChanges: có thay đổi
+        → Không đổi 45 · Thêm 0 · Sửa 1 · Xóa 0 → 1 thay đổi sẽ gửi
+  [DAT] Sau AcceptChanges: mọi dòng Unchanged
+        → Không đổi 46 · Thêm 0 · Sửa 0 · Xóa 0 → 0 thay đổi sẽ gửi
+  [DAT] Sau AcceptChanges: GetChanges() = null (Update sẽ gửi 0 lệnh)
+        → null
+  [DAT] AcceptChanges GIỮ giá trị mới (1.11)
+        → 1,11
+  [DAT] RejectChanges trả giá trị về bản gốc
+        → Nguyễn Văn An -> Nguyễn Văn An
+  [DAT] Sau RejectChanges: mọi dòng Unchanged
+        → Không đổi 46 · Thêm 0 · Sửa 0 · Xóa 0 → 0 thay đổi sẽ gửi
+  [DAT] RejectChanges loại bỏ dòng Added
+        → Rows: 47 -> 46
+  [DAT] Sau Delete: Deleted = 1
+        → Không đổi 45 · Thêm 0 · Sửa 0 · Xóa 1 → 1 thay đổi sẽ gửi
+  [DAT] RejectChanges phục hồi dòng đã Delete
+        → Rows = 46, Deleted = 0
+  [DAT] Thứ tự đúng: GetChanges() != null TRƯỚC AcceptChanges
+        → Update sẽ gửi 1 lệnh
+
+--- BAI 9 - Luu va doc DataSet bang XML ---
+  [DAT] Ghi được tệp XML kèm schema
+        → C:\Users\Admin\AppData\Local\Temp\Lab10_KiemTra_8ac409a161e747faa0d8f97dc3c53487\co_schema.xml
+  [DAT] Đọc lại được DataSet từ XML
+        → 2 bảng
+  [DAT] Giữ đúng số dòng SinhVien
+        → 46 dòng
+  [DAT] Giữ kiểu decimal cho cột DiemTB
+        → Decimal
+  [DAT] Giữ kiểu DateTime cho cột NgaySinh
+        → DateTime
+  [DAT] Giữ DataRelation sau khi đọc lại
+        → 1 quan hệ
+  [DAT] Ghi được tệp XML chỉ dữ liệu
+        → C:\Users\Admin\AppData\Local\Temp\Lab10_KiemTra_8ac409a161e747faa0d8f97dc3c53487\chi_dulieu.xml
+  [DAT] Tệp chỉ dữ liệu ĐỌC ĐƯỢC nhưng mất kiểu decimal
+        → Bảng = 2 (không có schema nên kiểu là string)
+  [DAT] Đọc tệp không tồn tại → báo lỗi rõ ràng
+        → Đã báo lỗi
+
+--- BAI 10 - Hop nhat du lieu bang Merge ---
+  [DAT] Bảng gốc có PrimaryKey
+        → MaSV
+  [DAT] Bảng bổ sung có 4 dòng
+        → Rows = 4
+  [DAT] Merge thêm 2 dòng mới, không cộng dồn
+        → 46 + 2 = 48 (thực tế 48)
+  [DAT] Mã SV001 không bị trùng sau Merge
+        → SV001 xuất hiện 1 lần
+  [DAT] SV900 (mới) có trong kết quả
+        → SV900: 1
+  [DAT] SV901 (mới) có trong kết quả
+        → SV901: 1
+  [DAT] preserveChanges=false → bản ĐẾN thắng (SV001 = 9.50)
+        → SV001 = 9,50
+  [DAT] preserveChanges=true → bản ĐI thắng (giữ điểm gốc)
+        → Gốc 8,20 = kết quả 8,20
+  [DAT] Merge KHÔNG làm thay đổi bảng gốc
+        → Gốc vẫn 46 dòng
+  [DAT] Merge KHÔNG có PrimaryKey → sinh dòng trùng khóa
+        → SV001 xuất hiện 2 lần, tổng 50 dòng
+
+======================================================================
+KET QUA: 89/89 phep kiem tra dat.
+======================================================================
