@@ -43,3 +43,6 @@ TestResults/
 
 # ===== JetBrains Rider =====
 *.sln.iml
+
+# ===== Ban sao luu CSDL =====
+*.bak

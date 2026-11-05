@@ -1,0 +1,9 @@
+﻿[DAT] Điểm nhập chữ -> Nhập liệu: Điểm phải là số, ví dụ 8.25.
+[DAT] Điểm ngoài [0,10] -> Nhập liệu: Điểm phải thuộc [0,10].
+[DAT] Thêm mã SV trùng (THROW 50001) -> Nghiệp vụ: Mã sinh viên đã tồn tại.
+[DAT] Xóa khoa đang có SV (THROW 50007) -> Nghiệp vụ: Không thể xóa khoa: còn 18 sinh viên thuộc khoa này (tính cả sinh viên đã xóa).
+[DAT] Email trùng, UNIQUE INDEX chặn (2601) -> Nghiệp vụ: Email đã được dùng bởi sinh viên khác (kể cả sinh viên đã xóa).
+[DAT] Thủ tục không tồn tại (2812) -> SQL: Thiếu Stored Procedure trong CSDL. Hãy chạy script SQL\Lab11_StoredProcedures.sql. (Mã tham chiếu: E261105123458-B769)
+[DAT] Kết nối sai CSDL (4060) -> SQL: Không kết nối được cơ sở dữ liệu. Hãy kiểm tra SQL Server và chuỗi kết nối trong App.config. (Mã tham chiếu: E261105123458-8D6F)
+[DAT] Lỗi ngoài dự kiến -> Hệ thống: Đã xảy ra lỗi ngoài dự kiến. (Mã tham chiếu: E261105123458-5489)
+KET QUA: 8/8 phep kiem tra dat.
