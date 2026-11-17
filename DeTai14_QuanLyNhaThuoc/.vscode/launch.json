@@ -1,0 +1,16 @@
+{
+  // F5: build roi chay. Can extension "C#" (ms-dotnettools.csharp); kieu "clr" de go loi .NET Framework 4.8.
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Chạy phần mềm nhà thuốc",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/QuanLyNhaThuoc.exe",
+      "cwd": "${workspaceFolder}/bin/Debug",
+      "console": "internalConsole",
+      "stopAtEntry": false
+    }
+  ]
+}

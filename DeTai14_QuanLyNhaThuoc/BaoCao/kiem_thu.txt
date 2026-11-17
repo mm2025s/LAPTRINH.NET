@@ -1,0 +1,58 @@
+﻿KIEM THU PHAN MEM QUAN LY NHA THUOC - 17/11/2026 15:40:03
+========================================================================
+
+--- TC01-03 Dang nhap va phan quyen ---
+  [DAT] TC01 Sai mat khau bi tu choi
+        -> LoiNghiepVu: Tên đăng nhập hoặc mật khẩu không đúng.
+  [DAT] TC02 Dang nhap duoc bang duocsi / 123456 (hash C# khop HASHBYTES cua SQL)
+  [DAT] TC03 Duoc si khong duoc them thuoc (chan o BUS)
+        -> LoiNghiepVu: Chức năng này chỉ dành cho Quản lý.
+
+--- TC04-07 Danh muc thuoc ---
+  [DAT] TC04 Gia ban <= 0 bi tu choi
+        -> LoiNhapLieu: Giá bán phải lớn hơn 0 và không quá 100 triệu.
+  [DAT] TC05 Them thuoc moi, ma duoc viet hoa, ton kho = 0
+  [DAT] TC06 Trung ma thuoc (THROW 51003)
+        -> LoiNghiepVu: Mã thuốc đã tồn tại.
+  [DAT] TC07 Tim "10%": % la ky tu thuong (chi Povidine 10%), khong phai ky tu dai dien
+        -> So dong = 1
+
+--- TC08-10 Nhap hang ---
+  [DAT] TC08 Khong nhap lo da het han
+        -> LoiNhapLieu: Không nhập lô thuốc đã hết hạn.
+  [DAT] TC09 Luu phieu nhap: ton KT01 = 50, KT02 = 20
+        -> MaPN=4
+  [DAT] TC10 Gia nhap va han dung duoc cap nhat theo lo
+
+--- TC11-17 Ban hang ---
+  [DAT] TC11 Them trung thuoc thi cong don so luong
+  [DAT] TC12 Them vuot ton kho bi chan ngay o gio hang
+        -> LoiNghiepVu: Không đủ tồn kho: "Thuốc thử KT01" chỉ còn 50 Viên.
+  [DAT] TC13 Thanh toan: ton KT01 50 -> 40, tong tien = 10 x 5.000
+        -> MaHD=62
+  [DAT] TC14 Thuoc ke don bat buoc nhap so don thuoc
+        -> LoiNhapLieu: Giỏ hàng có thuốc kê đơn: bắt buộc nhập số đơn thuốc của bác sĩ.
+  [DAT] TC15 Thu tuc kiem tra lai ton kho (THROW 51004)
+        -> LoiNghiepVu: Không đủ tồn kho: "Thuốc thử KT01" chỉ còn 5 Viên.
+  [DAT] TC16 Rollback: khong sinh hoa don, ton kho giu nguyen 5
+  [DAT] TC17 Thuoc het han khong duoc them vao gio
+        -> LoiNghiepVu: Thuốc "Thuốc thử KT01" đã hết hạn sử dụng, không được bán.
+
+--- TC18-21 Rang buoc du lieu va xu ly loi ---
+  [DAT] TC18 Xoa thuoc da co giao dich -> ngung kinh doanh, lich su van con
+  [DAT] TC19 Khong xoa nhom thuoc dang co thuoc (THROW 51009)
+        -> LoiNghiepVu: Nhóm đang có thuốc, không thể xóa.
+  [DAT] TC20 Khong trung so dien thoai khach (THROW 51008)
+        -> LoiNghiepVu: Số điện thoại đã thuộc về khách hàng khác.
+  [DAT] TC21 Loi SQL ky thuat (2812) -> thong bao than thien + ma tham chieu
+        -> CSDL thiếu thủ tục. Hãy chạy lại SQL\01_TaoCSDL_QLNhaThuoc.sql. (Mã tham chiếu: E261117154003-832B)
+
+--- TC23-26 Huong doi tuong, nhat ky va bao cao ---
+  [DAT] TC23 ThuocDAL dung qua interface ICrudDAL<ThuocDTO> (ke thua DalCoSo)
+  [DAT] TC24 Thao tac ghi duoc ghi nhat ky kem thoi gian xu ly (them thuoc KT01, thanh toan)
+  [DAT] TC25 Thao tac that bai cung duoc ghi (ban vuot ton kho, THROW 51004)
+  [DAT] TC26 Bao cao doanh thu (IBaoCao) co du lieu va dong tong
+        -> Tổng: 61 hóa đơn · 6.325.900 đ
+  [DAT] Du lieu goc: ton kho = tong nhap - tong ban (sau don dep)
+========================================================================
+KET QUA: 26/26 phep thu dat.

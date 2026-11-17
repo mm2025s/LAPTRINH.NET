@@ -1,0 +1,30 @@
+{
+  // Ctrl+Shift+B: build. Dung dotnet CLI nen khong phu thuoc duong dan MSBuild cua Visual Studio.
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "process",
+      "command": "dotnet",
+      "args": ["build", "${workspaceFolder}/QuanLyNhaThuoc.csproj", "-c", "Debug", "-nologo", "-v", "q"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "kiem thu (--kiemtra)",
+      "type": "process",
+      "command": "${workspaceFolder}/bin/Debug/QuanLyNhaThuoc.exe",
+      "args": ["--kiemtra"],
+      "dependsOn": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "tao lai CSDL (--caidat)",
+      "type": "process",
+      "command": "${workspaceFolder}/bin/Debug/QuanLyNhaThuoc.exe",
+      "args": ["--caidat"],
+      "dependsOn": "build",
+      "problemMatcher": []
+    }
+  ]
+}
